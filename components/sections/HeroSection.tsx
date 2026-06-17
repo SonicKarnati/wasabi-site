@@ -25,7 +25,7 @@ export function HeroSection({
           {eyebrow ? (
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-wasabi">{eyebrow}</p>
           ) : null}
-          <h1 className="font-display text-5xl font-semibold leading-[1.05] text-forest md:text-7xl">
+          <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[1.08] text-forest sm:text-5xl md:text-6xl">
             {title}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/80">{description}</p>

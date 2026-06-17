@@ -2,3 +2,27 @@
 Thumbs.db
 .obsidian/
 
+node_modules
+
+# Next.js / React build output
+.next/
+out/
+build/
+dist/
+
+# TypeScript / tooling caches
+tsconfig.tsbuildinfo
+.turbo/
+coverage/
+
+# Environment and local platform state
+.env
+.env.*
+!.env.example
+.vercel/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

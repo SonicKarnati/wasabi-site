@@ -2,3 +2,8 @@
 Thumbs.db
 .obsidian/
 
+node_modules
+.next/
+out/
+tsconfig.tsbuildinfo
+npm-debug.log*

@@ -61,6 +61,13 @@ Source: `docs/source/wasabi_brand_voice.docx`
 
 - `docs/source/wasabi_brand_voice.docx`
 - `docs/source/wasabi_design_system.docx`
+- `assets/raw/AI Learner Program - Wasabi AI _compressed.pdf`
+- `assets/raw/AI for SHG Empowerment_compressed.pdf`
+- `assets/raw/Adda247AIBootcampByWasabiAI_compressed.pdf`
+- `assets/raw/Bharat Builds with Manus AI - campaign_compressed.pdf`
+- `assets/raw/KASC Brochure_compressed.pdf`
+- `assets/raw/Startup with AI Event Brochure.pdf`
+- `assets/raw/Wasabi x Haryana SCBC- MoSJE_compressed.pdf`
 - `assets/raw/WhatsApp Image 2026-06-10 at 9.02.44 AM.jpeg`
 - `assets/raw/WhatsApp Image 2026-06-10 at 9.02.45 AM.jpeg`
 
@@ -68,6 +75,14 @@ Generated text references:
 
 - `docs/generated/wasabi_brand_voice.txt`
 - `docs/generated/wasabi_design_system.txt`
+- `docs/generated/AI_Learner_Program__Wasabi_AI_compressed.txt`
+- `docs/generated/AI_for_SHG_Empowerment_compressed.txt`
+- `docs/generated/Adda247AIBootcampByWasabiAI_compressed.txt`
+- `docs/generated/Bharat_Builds_with_Manus_AI__campaign_compressed.txt`
+- `docs/generated/KASC_Brochure_compressed.txt`
+- `docs/generated/Startup_with_AI_Event_Brochure.txt`
+- `docs/generated/Wasabi_x_Haryana_SCBC_MoSJE_compressed.txt`
+- `docs/generated/wasabi_pdf_analysis.md`
 
 ### Reusable headlines, taglines, and phrases
 
@@ -354,79 +369,156 @@ Source: `docs/source/wasabi_brand_voice.docx`
 
 ### Volunteers
 
-Volunteers are not explicitly mentioned in the materials. If volunteers are part of the model, they will need role descriptions, expectations, and impact context.
+Volunteers are not explicitly developed as a primary audience. If volunteers are part of the model, they will need role descriptions, expectations, and impact context.
 
-### Donors or sponsors
+### Donors, sponsors, media, and ecosystem partners
 
-Donors and sponsors are not explicitly mentioned. If they are an audience, they will need proof of outcomes, credibility, governance, and clear funding or partnership pathways.
+KASC and event materials imply sponsors, media, and ecosystem partners may matter, but they are not yet defined as primary website audiences. If included, they will need verified outcomes, credibility, governance, visibility model, and clear partnership pathways.
 
-## 6. Credibility Material
+Source: `docs/generated/wasabi_pdf_analysis.md`
+
+## 6. PDF Source Addendum
+
+The later PDF analysis expanded Phase 1 beyond the original two brand documents. The items below are source-confirmed as appearing in PDFs, but many are not yet verified for public website claims.
+
+### Named programs and initiatives
+
+- Adda247 AI Bootcamp / Adda AI Bootcamp Powered by Wasabi.
+- AI Empowerment Program for SHG Ecosystems.
+- AI Learner - Weekend Bootcamp / Level 1 AI Learner Program.
+- Bharat Builds with Manus.
+- Kanpur AI School Championship 2026.
+- Build and Launch a Startup with AI.
+- AI learning and Empowerment Initiative for SCBC communities.
+
+Source: `docs/generated/wasabi_pdf_analysis.md`
+
+### Program structure and delivery details found
+
+- AI Learner Program: Class 6-12, 2 days, 2.5 hours per day, live online, 1 year monthly guidance, 15+ tools, 3-4 projects.
+- Adda247 AI Bootcamp: 5 days, 90 minutes per day, 3rd-7th June, year unclear.
+- SHG Empowerment: Track A for EFC leaders and Track B for SHG women, with 1-day/2-day workshop phases, 2-3 week practice gaps, and approximately 3-month implementation gaps.
+- SCBC concept note: 6-hour proof-of-concept with learning, building, and closing phases.
+- Bharat Builds with Manus: 1-day, 4-hour hackathon/campaign concept.
+- Startup with AI: 4 Sundays and 300+ builders noted in source analysis.
+- KASC: August 2026, 2-day event.
+
+Source: `docs/generated/wasabi_pdf_analysis.md`
+
+### Contact details found
+
+- AI Learner Program: `www.thewasabiai.com`, `connect@thewasabiai.com`, `+91 6388685595`, and enrollment destination `https://www.thewasabiai.com/programs/enroll-learner.html`.
+- KASC: Kanpur, Uttar Pradesh; `+91 9619438489`; `connect@kanpuraischoolchampionship.in`; `www.kanpuraischoolchampionship.in`; QR destination noted as `www.kanpuraischoolchampionship.com`.
+- Startup with AI: Yash Mukesh, `yash@thewasabiai.com`, `9619438489`; Nithin Varma, `varmanithin029@gmail.com`, `9381904726`; registration URL `https://luma.com/owvaawyf`.
+- Adda247 Bootcamp: `www.adda247.com`; `www.wasab.ai`.
+
+The main website should not publish mixed domains or personal contacts until the preferred public contact path is confirmed.
+
+Source: `docs/generated/wasabi_pdf_analysis.md`
+
+### Additional reusable copy
+
+- "AI is not the identity. It's the leverage layer."
+- "Not certificates. Actual capabilities."
+- "AI is not replacing women. AI is strengthening women."
+- "Voice-first. Regional language. Outcome-oriented. Low-literacy accessible."
+- "Think - Create - Evolve."
+- "2 days. Live online. Real tools. Real projects. Real certificate."
+- "The gap is not technology. The gap is capability."
+- "The future will not be given. It will be built."
+- "The fastest way to learn is to build."
+- "Empowerment begins when people believe: I am capable. I can build. I can solve."
+
+Source: `docs/generated/wasabi_pdf_analysis.md`
+
+### Campaign visual variants found
+
+- Core design system: cream, forest green, Wasabi green, restrained terracotta, Cormorant Garamond, DM Sans, and single-line visual language.
+- AI Learner: youthful lime/black/white student campaign treatment.
+- Adda247 Bootcamp: red/black/white co-branded campaign style driven by Adda247 context.
+- KASC: civic/event championship identity with mission references and projected event metrics.
+- Startup/Bharat Builds: event/campaign visual language with tool or partner motifs.
+- SHG/SCBC: formal concept-note/proposal layouts with tables and dense explanatory copy.
+
+Campaign variants should not replace the core Wasabi design system.
+
+Source: `docs/generated/wasabi_pdf_analysis.md`
+
+## 7. Credibility Material
 
 ### Awards
 
-Missing. No awards are provided.
+Awards are claimed in the PDFs but not yet verified for publication.
 
 ### Partnerships
 
-Missing. No partner names or partnership evidence are provided.
+Named or implied relationships appear in PDFs, including Adda247, Manus, public-sector/SCBC framing, school/championship references, and policy/mission alignment references. These require verification and logo-use permission before public use.
 
 ### Metrics
 
-Missing. No reach, outcome, participant, workshop, region, or school metrics are provided.
+Metrics exist in PDFs but must be separated by status:
+
+- Program-structure numbers are safer to use once current program details are confirmed.
+- Claimed impact metrics such as students trained, projects built, schools represented, awards, satisfaction, mentors, and media features need verification.
+- Projected or target numbers, especially KASC 2026 metrics, must not be presented as achieved impact.
 
 ### Testimonials
 
-Missing. No verified testimonials are provided.
+Student quotes and stories appear in the AI Learner and Adda247 PDFs, including Sarthak Tripathi and several named student winners. These require consent, exact wording confirmation, and image/story permission before public use.
 
 ### Leadership information
 
-Missing. No founder, team, advisor, board, or leadership bios are provided.
+Partially present. Abhra K Dubey appears as Wasabi co-founder in the AI Learner PDF. Several advisors and team/organizer names appear in KASC and Adda247 PDFs. All bios, titles, permissions, and current roles need verification.
 
 ### Reports
 
-Missing. No annual report, program report, impact report, or case study is provided.
+Missing. No annual report, program report, audited impact report, or formal case-study document is provided.
 
 ### Case studies and past work
 
-Missing. No named case studies or past work examples are provided.
+Partially present. AI Margdarshak / Sarthak Tripathi and student winner project examples appear in AI Learner materials. They should be treated as possible case studies pending consent and verification.
 
 ### Program outcomes
 
-Partially implied but not evidenced. The materials describe desired shifts in confidence and capability, but do not provide measured outcomes.
-
-Source: `docs/source/wasabi_brand_voice.docx`
+Partially implied and partially claimed. Program materials repeatedly describe participants leaving with real projects, portfolios, catalogs, prompt handbooks, AI workflows, business assets, and certificates. Measured outcomes such as revenue growth, student reach, projects built, satisfaction, awards, or news coverage need verification.
 
 ### Media mentions
 
-Missing. No media coverage is provided.
+Media/news mentions are implied in some PDFs but no media clips or source links are provided.
 
 ### Legitimacy signals present
 
 - Detailed brand voice guide.
 - Detailed visual identity and design system.
 - Logo assets.
+- Multiple named program frameworks and campaign decks.
+- Detailed curricula, deliverables, program durations, and audience pathways.
+- Contact details in several source PDFs.
 - Clear values around restraint, authenticity, human-centered AI, and Bharat-native positioning.
+- Possible advisors, mentors, partnerships, and student stories, pending verification.
 
 Source: all Phase 1 source materials
 
-## 7. Missing Information
+## 8. Missing Information
 
 - Formal vision statement.
-- Official public contact details.
+- Official primary public contact details and preferred domain.
 - Legal entity details, if relevant.
-- Program names, descriptions, durations, audiences, and delivery model.
-- Impact metrics.
-- Partner or institution proof.
-- Awards, certifications, or media mentions.
-- Leadership/team bios.
-- Verified testimonials.
-- Case studies or named examples of past work.
+- Current status for each named program, campaign, or initiative.
+- Verified impact metrics and source records.
+- Partner or institution proof and logo-use permissions.
+- Award, certification, or media proof.
+- Leadership/team bios and advisor publishing permissions.
+- Verified testimonials and consent.
+- Case-study permissions for named student/project examples.
 - Rights-cleared photography from actual Wasabi environments.
 - Full logo asset package in vector and transparent formats.
 - Accessibility guidance beyond color/typography contrast notes.
-- Government-specific messaging and proof.
+- Government-specific proof, approvals, and permitted public-sector naming.
 - International-facing messaging and explanatory context.
 - Donor, sponsor, volunteer, or institutional partnership pathways.
 - Privacy, safeguarding, consent, or youth/student-related policy guidance.
 - Exact website information architecture.
-- Any contradictions between source documents: none found in the current materials.
+- Domain conflict: `thewasabiai.com`, `wasab.ai`, `kanpuraischoolchampionship.in`, and `kanpuraischoolchampionship.com` appear in source/analysis material.
+- Claim-safety rules needed before public site copy: separate achieved metrics, projected metrics, targeted metrics, aspirational outcomes, and third-party alignment/quote claims.
+- Any contradictions between source documents: no direct contradiction found, but contact/domain and program-status differences need review.

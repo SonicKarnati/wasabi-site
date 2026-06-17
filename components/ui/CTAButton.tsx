@@ -15,7 +15,7 @@ export function CTAButton({ label, href, variant = "primary", className, onClick
       className={cx(
         "inline-flex min-h-11 items-center justify-center rounded-md border px-5 py-2 text-sm font-bold transition focus-visible:outline-terracotta",
         variant === "primary" &&
-          "border-wasabi bg-wasabi !text-white shadow-sm hover:-translate-y-0.5 hover:border-forest hover:bg-[#245a42] hover:!text-white hover:shadow-md",
+          "shine-button border-wasabi bg-wasabi !text-white shadow-sm hover:-translate-y-0.5 hover:border-forest hover:bg-[#245a42] hover:!text-white hover:shadow-md",
         variant === "secondary" &&
           "border-wasabi bg-transparent text-wasabi hover:bg-white/70",
         variant === "text" &&

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
   Building2,
@@ -9,6 +10,7 @@ import {
   Sparkles,
   UsersRound,
 } from "lucide-react";
+import { MouseGradientSection } from "@/components/sections/MouseGradientSection";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { VerificationBadge } from "@/components/ui/VerificationBadge";
 import { plannedScale, proofStats, storyPlaceholders } from "@/content/impact";
@@ -59,24 +61,28 @@ const sourceVisuals = [
     alt: "AI Learner brochure cover",
     title: "AI Learner",
     note: "Prototype visual, not final approved photography.",
+    href: "/programs",
   },
   {
     src: "/assets/extracted/wasabi-startup-event-cover.png",
     alt: "Startup with AI event brochure cover",
     title: "Builder events",
     note: "Contains partner-style marks; needs review before final use.",
+    href: "/programs",
   },
   {
     src: "/assets/extracted/wasabi-bharat-builds-cover.png",
     alt: "Bharat Builds campaign cover",
     title: "Hackathon movement",
     note: "Strong visual; partner/reference permission risk.",
+    href: "/programs",
   },
   {
     src: "/assets/extracted/wasabi-shg-empowerment-cover.png",
     alt: "SHG empowerment source page",
     title: "SHG ecosystem",
     note: "Grounded source texture; text-heavy.",
+    href: "/programs",
   },
 ];
 
@@ -146,7 +152,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="demo-dark-band overflow-hidden bg-forest py-16 text-cream md:py-24">
+      <MouseGradientSection className="demo-dark-band overflow-hidden bg-forest py-16 text-cream md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
@@ -165,7 +171,7 @@ export default function HomePage() {
               const Icon = programIcons[index % programIcons.length];
               return (
                 <article key={program.id} className="demo-program-card">
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-center justify-between gap-4">
                     <span className="demo-icon-bubble">
                       <Icon aria-hidden="true" size={22} />
                     </span>
@@ -180,7 +186,7 @@ export default function HomePage() {
             })}
           </div>
         </div>
-      </section>
+      </MouseGradientSection>
 
       <section className="overflow-hidden py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -196,13 +202,18 @@ export default function HomePage() {
 
           <div className="demo-image-rail mt-12">
             {sourceVisuals.map((visual) => (
-              <figure key={visual.src} className="demo-source-card">
-                <Image src={visual.src} alt={visual.alt} width={420} height={560} />
-                <figcaption>
-                  <strong>{visual.title}</strong>
-                  <span>{visual.note}</span>
-                </figcaption>
-              </figure>
+              <Link key={visual.src} href={visual.href} className="demo-source-card" aria-label={`View related programs for ${visual.title}`}>
+                <figure>
+                  <Image src={visual.src} alt={visual.alt} width={420} height={560} />
+                  <figcaption>
+                    <strong>{visual.title}</strong>
+                    <span>{visual.note}</span>
+                    <span className="demo-source-action">
+                      View related program <ArrowRight aria-hidden="true" size={15} />
+                    </span>
+                  </figcaption>
+                </figure>
+              </Link>
             ))}
           </div>
         </div>
@@ -223,8 +234,12 @@ export default function HomePage() {
             <div className="grid gap-5 sm:grid-cols-2">
               {proofStats.map((stat) => (
                 <article key={stat.label} className="demo-proof-card">
-                  <FileCheck2 aria-hidden="true" className="text-wasabi" />
-                  <VerificationBadge status={stat.status} />
+                  <div className="demo-proof-top">
+                    <span className="demo-proof-icon">
+                      <FileCheck2 aria-hidden="true" size={21} />
+                    </span>
+                    <VerificationBadge status={stat.status} />
+                  </div>
                   <p className="mt-5 font-display text-4xl font-bold leading-none text-wasabi">{stat.value}</p>
                   <p className="mt-2 text-sm font-bold text-forest">{stat.label}</p>
                   <p className="mt-3 text-sm leading-6 text-muted">{stat.note}</p>
@@ -232,9 +247,13 @@ export default function HomePage() {
               ))}
               {plannedScale.map((item) => (
                 <article key={item.title} className="demo-proof-card sm:col-span-2">
-                  <ShieldCheck aria-hidden="true" className="text-wasabi" />
-                  <VerificationBadge status={item.status} />
-                  <h3 className="mt-5 font-display text-3xl font-semibold text-forest">{item.title}</h3>
+                  <div className="demo-proof-top">
+                    <span className="demo-proof-icon">
+                      <ShieldCheck aria-hidden="true" size={21} />
+                    </span>
+                    <VerificationBadge status={item.status} />
+                  </div>
+                  <h3 className="mt-7 font-display text-3xl font-semibold text-forest">{item.title}</h3>
                   {item.metric ? <p className="mt-4 text-lg font-bold leading-7 text-wasabi">{item.metric}</p> : null}
                   <p className="mt-4 leading-7 text-ink/80">{item.description}</p>
                 </article>

@@ -4,7 +4,7 @@ import { programs } from "./programs";
 export const homePage = {
   hero: {
     eyebrow: "Wasabi AI",
-    title: "Building human capability in the age of AI",
+    title: "Building Human Capability In The Age Of AI",
     description:
       "Wasabi helps people in Bharat become capable builders by creating real things with AI.",
     primaryCta: { label: "Partner with Wasabi", href: "/contact", variant: "primary" as const },

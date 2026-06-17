@@ -84,7 +84,7 @@ export default function ContactPage() {
                 <input className="mt-1 size-4" type="checkbox" name="acknowledgement" />
                 <span>I understand this is an inquiry, not an enrollment or partnership confirmation.</span>
               </label>
-              <button className="min-h-11 rounded-md bg-wasabi px-5 py-3 text-sm font-bold text-white" type="button">
+              <button className="min-h-11 rounded-md border border-wasabi bg-wasabi px-5 py-3 text-sm font-bold !text-white shadow-sm transition hover:-translate-y-0.5 hover:border-forest hover:bg-[#245a42] hover:!text-white hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" type="button">
                 Submit inquiry placeholder
               </button>
               <p className="text-sm leading-6 text-muted">[Placeholder: response timeline and privacy/consent note]</p>

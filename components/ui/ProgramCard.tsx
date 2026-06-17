@@ -9,7 +9,7 @@ type ProgramCardProps = {
 export function ProgramCard({ program }: ProgramCardProps) {
   return (
     <article className="flex h-full min-w-0 flex-col rounded-lg border border-line bg-white/45 p-6 transition hover:border-wasabi">
-      <div className="flex min-w-0 flex-wrap items-start justify-between gap-3">
+      <div className="grid min-w-0 gap-3">
         <h3 className="min-w-0 break-words font-display text-3xl font-semibold leading-tight text-forest">
           {program.title}
         </h3>

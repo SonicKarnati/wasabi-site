@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CTA } from "@/content/types";
+import { CTAButton } from "@/components/ui/CTAButton";
 
 type MobileNavProps = {
   items: Array<{ label: string; href: string }>;
@@ -19,9 +20,7 @@ export function MobileNav({ items, cta }: MobileNavProps) {
               {item.label}
             </Link>
           ))}
-          <Link href={cta.href} className="mt-2 rounded-md bg-wasabi px-3 py-3 text-center text-sm font-bold text-white">
-            {cta.label}
-          </Link>
+          <CTAButton {...cta} className="mt-2 w-full" />
         </nav>
       </div>
     </details>

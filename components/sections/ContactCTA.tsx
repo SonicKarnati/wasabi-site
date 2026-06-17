@@ -16,7 +16,7 @@ export function ContactCTA({
           <h2 className="font-display text-4xl font-semibold leading-tight text-white md:text-5xl">{title}</h2>
           <p className="mt-5 max-w-2xl leading-7 text-cream/85">{description}</p>
           <div className="mt-8">
-            <CTAButton label="Contact Wasabi" href="/contact" variant="primary" className="border-white bg-white text-forest hover:bg-cream" />
+            <CTAButton label="Contact Wasabi" href="/contact" variant="primary" />
           </div>
         </div>
       </div>

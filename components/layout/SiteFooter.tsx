@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
         <div>
           <Image
-            src="/assets/wasabi-logo-dark.jpeg"
+            src="/assets/wasabi-logo-dark-transparent.png"
             alt="Wasabi AI"
             width={200}
             height={68}

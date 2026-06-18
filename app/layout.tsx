@@ -29,8 +29,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <SiteHeader />
-        <main>{children}</main>
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
         <SiteFooter />
       </body>
     </html>

@@ -4,12 +4,14 @@ import type { CTA } from "@/content/types";
 
 type CTAButtonProps = CTA & {
   className?: string;
+  onClick?: () => void;
 };
 
-export function CTAButton({ label, href, variant = "primary", className }: CTAButtonProps) {
+export function CTAButton({ label, href, variant = "primary", className, onClick }: CTAButtonProps) {
   return (
     <Link
       href={href}
+      onClick={onClick}
       className={cx(
         "inline-flex min-h-11 items-center justify-center rounded-md border px-5 py-2 text-sm font-bold transition focus-visible:outline-terracotta",
         variant === "primary" &&

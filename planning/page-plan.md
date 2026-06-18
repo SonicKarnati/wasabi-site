@@ -1,262 +1,111 @@
 # Page Plan
 
-## Site Map Decision
+## Why This Doc Exists
 
-Version 1 should use the requested five-page structure: Home, About, Programs / Work, Impact, and Contact. The source materials support many program types, but not enough verified detail for separate public program pages yet. A single Programs / Work page is the best first version because it can show breadth while keeping verification risks visible.
+This document explains the role of each public page and the logic behind the page structure. It is meant to guide implementation decisions and prevent feature creep.
 
-# Page: Home
+## Site Structure
 
-## Purpose
+Version 1 uses five pages because that is the smallest complete structure that can explain the brand, show the work, preserve proof discipline, and route inquiries safely.
 
-Establish Wasabi's identity, credibility, and reason to exist in one clear journey.
+- Home is the trust gateway.
+- About explains the belief system.
+- Programs explains the work.
+- Impact separates proof from projection.
+- Contact routes the next step.
 
-## Audience
+## Home
 
-Government visitors, institutional partners, schools, parents, international visitors, and general public.
+### Why It Exists
 
-## Main message
+The homepage has to answer three questions immediately: what is Wasabi, why does it matter, and why should I trust it?
 
-Wasabi helps people in Bharat become capable builders in the age of AI by creating real outputs, not just attending classes.
+### What It Must Do
 
-## Sections
+- Establish the capability-building thesis.
+- Show the main audience pathways.
+- Introduce the program categories.
+- Surface proof status without overclaiming.
+- Invite contact or partnership.
 
-1. Hero
-2. Trust / proof strip
-3. Problem
-4. What Wasabi does
-5. Programs / work preview
-6. Impact / proof status
-7. Human story placeholder
-8. CTA
+### What Not To Do
 
-## Section Notes
+- Do not overload the page with deep program detail.
+- Do not present placeholder proof as real proof.
+- Do not hide the claim-status logic.
 
-- Hero should name Wasabi and the capability-building thesis.
-- Trust strip should use placeholders until metrics are verified.
-- Problem should use source language: "The gap is not technology. The gap is capability."
-- What Wasabi does should explain build-first AI education.
-- Programs preview should include youth, school, SHG, public-sector, startup/hackathon, and event/championship work.
-- Impact should separate verified proof from projected/target claims.
-- Human story must remain a placeholder until consent is confirmed.
+## About
 
-## CTA
+### Why It Exists
 
-Primary: Partner with Wasabi.  
-Secondary: Explore programs.
+The About page explains the philosophy behind the work so the site does not read like a generic AI education brand.
 
-## Proof Needed
+### What It Must Do
 
-- Verified student/project/school metrics.
-- Approved partner or institution references.
-- Approved student/community story.
+- Explain that human capability is the product.
+- Explain the Bharat-native context.
+- Show the Wasabi Moment as a belief shift.
+- Keep the team/advisor area placeholder-safe until approved.
 
-## Missing Content
+### What Not To Do
 
-- Official domain/contact decision.
-- Verified impact numbers.
-- Approved photography.
-- Partner/logo permissions.
+- Do not turn About into a biography dump.
+- Do not use unsupported origin-story details.
 
-## Wireframe
+## Programs
 
-`wireframes/home.md`
+### Why It Exists
 
-# Page: About
+The Programs page is the operational proof of the site. It shows what Wasabi actually does without needing separate microsites for each initiative.
 
-## Purpose
+### What It Must Do
 
-Explain Wasabi's belief system, tone, and differentiated view of AI as human capability.
+- Show program breadth.
+- Keep audience, format, outputs, and source visible.
+- Expose status and permission risk.
+- Route visitors to a discussion CTA.
 
-## Audience
+### What Not To Do
 
-Institutional partners, government visitors, international visitors, schools, parents, and general public.
+- Do not imply every program is live today.
+- Do not merge verified and unverified program details.
+- Do not add a new page when a card-level summary is enough.
 
-## Main message
+## Impact
 
-Wasabi believes AI is not the hero; human capability is. People become capable by building.
+### Why It Exists
 
-## Sections
+Impact is the trust page. Its job is not to impress; its job is to separate what is verified from what is projected or pending.
 
-1. Page hero
-2. Core belief
-3. Why Bharat needs capability creation
-4. The Wasabi Moment
-5. Principles
-6. Team / advisors placeholder
-7. CTA
+### What It Must Do
 
-## Section Notes
+- Show verified metrics when available.
+- Keep projected scale in a clearly labeled area.
+- Keep story/case-study content consent-based.
+- Reinforce that proof status is part of the content model.
 
-- Core belief can use source-grounded brand language.
-- Bharat context should avoid generic nationalism and focus on practical access, confidence, and creation.
-- The Wasabi Moment should explain the emotional breakthrough.
-- Team/advisor area must stay placeholder until bios and permissions are verified.
+### What Not To Do
 
-## CTA
+- Do not elevate projections into achievements.
+- Do not publish stories without approval.
 
-Primary: See the work.  
-Secondary: Contact Wasabi.
+## Contact
 
-## Proof Needed
+### Why It Exists
 
-- Founder/team bios.
-- Advisor permission.
-- Origin story details, if available.
+Contact converts intent into the right inquiry path while protecting the site from publishing unconfirmed contact data or implying automatic enrollment/partnership.
 
-## Missing Content
+### What It Must Do
 
-- Formal vision statement.
-- Legal/entity details.
-- Team and advisor bios.
-- Approved real photography.
+- Route by inquiry type.
+- Show official contact placeholders until confirmed.
+- Explain that a form submission is only an inquiry.
+- Keep the form accessible and straightforward.
 
-## Wireframe
+### What Not To Do
 
-`wireframes/about.md`
-
-# Page: Programs / Work
-
-## Purpose
-
-Show what Wasabi actually does, with enough structure for serious visitors to understand programs without needing full microsites.
-
-## Audience
-
-Government visitors, schools, parents, institutional partners, SHG ecosystem stakeholders, startup builders, and students.
-
-## Main message
-
-Wasabi designs build-first AI programs for different communities, each centered on real outputs and confidence through creation.
-
-## Sections
-
-1. Page hero
-2. Program category overview
-3. AI Learner / student programs
-4. School and city-wide AI movements
-5. SHG enterprise AI empowerment
-6. Public-sector / SCBC empowerment POC
-7. Startup and hackathon builder programs
-8. Co-branded bootcamps
-9. Program proof / verification notes
-10. CTA
-
-## Section Notes
-
-- Program cards should show audience, format, outputs, and proof status.
-- AI Learner can use structure: Class 6-12, 2 days, live online, real tools, real projects, real certificate, plus monthly guidance.
-- SHG can show Track A / Track B and voice-first regional-language delivery.
-- SCBC can show target groups and 6-hour format.
-- KASC must label August 2026 metrics as targeted/expected/projected.
-- Adda247/Manus references should be placeholders until partner permissions are confirmed.
-
-## CTA
-
-Primary: Discuss a program.  
-Secondary: Ask about enrollment.
-
-## Proof Needed
-
-- Current program status.
-- Partner permissions.
-- Verified metrics.
-- Current pricing/dates.
-- Consent for stories/photos.
-
-## Missing Content
-
-- Which programs are active.
-- Which programs should be public.
-- Program-specific CTAs.
-- Official enrollment links.
-
-## Wireframe
-
-`wireframes/programs.md`
-
-# Page: Impact
-
-## Purpose
-
-Build trust without overclaiming by separating verified impact, program outputs, projected scale, and pending proof.
-
-## Audience
-
-Government, institutional partners, sponsors, international visitors, schools, and media.
-
-## Main message
-
-Wasabi's impact story should be measured by capability created, real outputs built, and confidence unlocked.
-
-## Sections
-
-1. Page hero
-2. Verified impact placeholder
-3. Program output examples
-4. Projected / target initiatives
-5. Case-study placeholders
-6. Trust and verification notes
-7. CTA
-
-## Section Notes
-
-- Do not use unverified metrics as final proof.
-- Include placeholders for students trained, projects built, schools reached, and partners.
-- KASC projected metrics belong in a planned-scale area, not verified impact.
-- Student and SHG stories need consent before publication.
-
-## CTA
-
-Primary: Request impact details.  
-Secondary: Partner on a pilot.
-
-## Proof Needed
-
-- Verified metrics.
-- Reports or dashboards.
-- Approved case studies.
-- Testimonials and consent.
-- Media proof.
-
-## Missing Content
-
-- Measured outcomes.
-- Impact methodology.
-- Reports.
-- Permissioned stories.
-
-## Wireframe
-
-`wireframes/impact.md`
-
-# Page: Contact
-
-## Purpose
-
-Convert interest into the right inquiry path without publishing unconfirmed contact details.
-
-## Audience
-
-Government, schools, parents, institutions, partners, media, and potential supporters.
-
-## Main message
-
-If you want to bring build-first AI capability to a community, school, district, or institution, contact Wasabi.
-
-## Sections
-
-1. Page hero
-2. Inquiry paths
-3. Contact details placeholder
-4. Program interest form structure
-5. Response expectations
-6. CTA
-
-## Section Notes
-
-- Contact details should remain placeholder until official domain/email/phone are confirmed.
-- Inquiry paths should include government/public-sector, school/student, institutional partnership, media/sponsor, and general inquiry.
-- No live form implementation in Phase 2; wireframe only.
+- Do not make the form feel like a commitment flow.
+- Do not hide privacy or response expectations.
 
 ## CTA
 

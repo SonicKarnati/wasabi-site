@@ -1,33 +1,33 @@
 # Wasabi AI Website
 
-Version 1 website planning and implementation for Wasabi AI.
+This repository contains the Wasabi AI public website, its source-backed content model, and the product rules that keep the site credible, accessible, and review-safe.
 
-This repository contains the phased planning record, source materials, WireMD wireframes, structured content, and a Next.js implementation for the public Wasabi website.
+## What Lives Here
 
-## Current Scope
+- `app/` Next.js routes and root layout
+- `components/` shared layout, section, and UI components
+- `content/` typed content that powers pages and status labels
+- `styles/` global CSS and design tokens
+- `public/assets/` web assets used at runtime
+- `assets/` source documents and raw/processed evidence assets
+- `docs/` extracted source material and analysis
+- `wireframes/` low-fidelity page structure
+- `planning/` strategy, rules, readiness, QA, and owner-facing phase reviews
 
-- Brand foundation and review notes
-- Site strategy and WireMD wireframes
-- Visual system and component planning
-- Next.js, TypeScript, and Tailwind CSS implementation
-- Placeholder-safe content for unverified claims, metrics, contacts, testimonials, and partner-sensitive material
+## How The Repo Is Organized
 
-## Project Structure
+Use the docs in `planning/` as the durable product ruleset:
 
-```txt
-app/                 Next.js App Router pages and root layout
-components/          Reusable layout, section, and UI components
-content/             Typed site content used by pages and components
-lib/                 Shared implementation utilities
-public/assets/       Public web assets used by the site
-styles/              Global CSS and design tokens
-planning/            Phase reviews, strategy, brand, design, and build planning
-wireframes/          WireMD page wireframes
-docs/source/         Source-grounded extracted material and review inputs
-docs/generated/      Generated or derived analysis outputs
-assets/raw/          Original source assets and documents
-assets/processed/    Processed assets that may be used after review
-```
+- `planning/site-strategy.md` explains what the site must accomplish and why the page set exists.
+- `planning/page-plan.md` explains why each page exists and what belongs on it.
+- `planning/component-plan.md` explains how the shared UI should behave.
+- `planning/content-model.md` explains what content can be published and how claim statuses work.
+- `planning/accessibility-and-trust.md` explains the accessibility and credibility rules the site must keep.
+- `planning/build-readiness.md` explains what is safe to build now and what must wait.
+- `planning/deployment-readiness.md` explains the deployment assumptions.
+- `planning/qa-checklist.md` explains how to verify the site before merge or release.
+
+The `planning/phase*.md` files are owner-facing history and decision records. They explain how the project got here, but they are not the developer-facing source of truth for implementation.
 
 ## Development
 
@@ -35,8 +35,6 @@ assets/processed/    Processed assets that may be used after review
 npm install
 npm run dev
 ```
-
-The app runs locally with Next.js. Use `npm run build` before merge when production readiness matters.
 
 ## Quality Checks
 
@@ -46,22 +44,14 @@ npm run typecheck
 npm run build
 ```
 
+## Rules To Preserve
+
+- Do not publish unsupported claims.
+- Keep placeholders visible until they are verified and approved.
+- Keep verification status explicit in UI and content.
+- Keep accessibility and readable contrast intact on mobile and desktop.
+- Keep source material separate from final public copy.
+
 ## Lockfile Policy
 
-This is an npm project. Commit `package-lock.json` so dependency versions are reproducible across local development, pull requests, and deployment.
-
-## Claim Safety
-
-Do not publish unsupported government, institutional, partner, impact, testimonial, award, or outcome claims.
-
-Use visible placeholders for missing or unverified content, for example:
-
-```txt
-[Placeholder: verified impact metric needed]
-```
-
-Before replacing a placeholder, confirm the source in `docs/source/`, `assets/raw/`, `assets/processed/`, or the relevant planning review file.
-
-## Phase Reviews
-
-The phase review files in `planning/` are part of the project record. Read the latest relevant review before changing strategy, content, visual direction, or implementation scope.
+This is an npm project. Commit `package-lock.json` so dependency versions stay reproducible across local development, PRs, and deployment.

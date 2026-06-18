@@ -1,6 +1,12 @@
 # Content Model
 
-This document defines structured content needed for the eventual website. Examples are source-supported where possible; missing proof remains placeholder text.
+## Why This Doc Exists
+
+This document defines the content types the site is allowed to render. It exists so page components can stay simple while claim status, source traceability, and approval logic remain explicit.
+
+## Core Principle
+
+Content is not public truth unless it is verified or approved. Everything else must be labeled as placeholder, projected, needs verification, or do not publish.
 
 ## Model: Page
 
@@ -15,6 +21,8 @@ This document defines structured content needed for the eventual website. Exampl
 | status | enum | yes | `draft` | Draft / review / approved. |
 | sourceNotes | array | optional | `planning/page-plan.md` | Internal traceability. |
 
+Use this model for route-level content only. It should describe page purpose and structure, not design decisions.
+
 ## Model: NavigationItem
 
 | Field | Type | Required | Example | Notes |
@@ -24,6 +32,8 @@ This document defines structured content needed for the eventual website. Exampl
 | priority | number | yes | `4` | Controls order. |
 | isPrimaryCTA | boolean | yes | `false` | Only one primary CTA in header. |
 | external | boolean | optional | `false` | For external links. |
+
+Navigation should stay small and stable so the header can remain simple and accessible.
 
 ## Model: Program
 
@@ -42,6 +52,8 @@ This document defines structured content needed for the eventual website. Exampl
 | cta | reference | optional | `Ask about AI Learner` | Link needs final routing. |
 | source | string | yes | `assets/raw/AI Learner Program - Wasabi AI _compressed.pdf` | Required for traceability. |
 
+Program records should always make it obvious what the program is, who it is for, and whether the published language is approved.
+
 ## Model: ImpactMetric
 
 | Field | Type | Required | Example | Notes |
@@ -53,6 +65,8 @@ This document defines structured content needed for the eventual website. Exampl
 | publicApproved | boolean | yes | `false` | Defaults false. |
 | notes | string | optional | `KASC values are projected only` | Clarify claim safety. |
 
+Impact metrics must never be presented without a source trail and status label.
+
 ## Model: Partner
 
 | Field | Type | Required | Example | Notes |
@@ -63,6 +77,8 @@ This document defines structured content needed for the eventual website. Exampl
 | permissionStatus | enum | yes | `needs permission` | approved / needs permission / do not publish. |
 | source | string | yes | `[Placeholder: source]` | Required. |
 | notes | string | optional | `Adda247 and Manus need verification` | Internal review. |
+
+Partner records are permission-sensitive. A name in the data model does not mean it is safe to publish.
 
 ## Model: TestimonialOrStory
 
@@ -78,6 +94,8 @@ This document defines structured content needed for the eventual website. Exampl
 | source | string | yes | `[Placeholder: source]` | Required. |
 | publicApproved | boolean | yes | `false` | Defaults false. |
 
+Stories require both approval and rights handling before they can appear on the site.
+
 ## Model: CTA
 
 | Field | Type | Required | Example | Notes |
@@ -89,6 +107,8 @@ This document defines structured content needed for the eventual website. Exampl
 | trackingName | string | optional | `partner_cta_home` | Future analytics. |
 | requiresVerification | boolean | yes | `false` | True if linking to external/enrollment flow. |
 
+CTAs should reflect the user journey honestly. A CTA can invite inquiry, but not imply a confirmed outcome.
+
 ## Model: FAQ
 
 | Field | Type | Required | Example | Notes |
@@ -98,6 +118,8 @@ This document defines structured content needed for the eventual website. Exampl
 | audience | enum | yes | `student` | student / parent / school / government / partner. |
 | source | string | optional | `assets/raw/AI Learner Program - Wasabi AI _compressed.pdf` | Required if source-specific. |
 | status | enum | yes | `draft` | draft / approved / needs verification. |
+
+FAQs are useful only when they answer real questions the target audience will have. Keep them short and grounded.
 
 ## Model: ContactInfo
 
@@ -111,6 +133,8 @@ This document defines structured content needed for the eventual website. Exampl
 | privacyNote | text | yes | `[Placeholder: privacy/consent note]` | Needed before form build. |
 | responseExpectation | text | optional | `[Placeholder: response timing]` | Optional but useful. |
 
+Contact info is treated as public product data. Do not publish mixed or partial contact details without a routing decision.
+
 ## Model: VerificationStatus
 
 | Field | Type | Required | Example | Notes |
@@ -120,3 +144,5 @@ This document defines structured content needed for the eventual website. Exampl
 | source | string | yes | `[Placeholder: source]` | Required. |
 | lastReviewed | date | optional | `[Placeholder: date]` | Useful for Phase 4. |
 | notes | text | optional | `Partner/logo permission pending` | Internal only if needed. |
+
+Status values should be used consistently across content and UI so the site never implies a stronger claim than the source supports.

@@ -44,6 +44,32 @@ npm run typecheck
 npm run build
 ```
 
+## Deployment
+
+This project is deployed on Vercel.
+
+### Local validation
+
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
+
+### Preview deployment
+
+```bash
+npx vercel deploy
+```
+
+### Production deployment
+
+```bash
+npx vercel deploy --prod
+```
+
+Production deployment should only happen after preview QA passes and the owner approves production release.
+
 ## Rules To Preserve
 
 - Do not publish unsupported claims.

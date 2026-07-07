@@ -80,3 +80,26 @@ push `main` (auto-deploys). Hand interactive/visual confirm to Claude-in-Chrome.
 ### 11. Figma mirror (after deploy) → SUB-AGENT
 Mirror the FINAL live site's actual elements into Figma file `tauCD0NcX2DAAq8eBbIKIJ`
 (flat frames per page: home, about, programs, impact, contact).
+
+---
+
+## Progress log — 2026-07-06
+
+**Tasks 1–10 DONE and deployed to production** (commit `82e23c0`, live at
+wasabi-government-landing.vercel.app, HTTP 200 verified):
+- Placeholders filled from planning docs (honest, no fabricated numbers); proof
+  statuses promoted from "placeholder" → "needs verification"; footer trust note + CTA
+  meta copy de-devified.
+- Mobile nav → animated burger/X; hero uses `100svh` (cutoff fixed).
+- `.demo-dark-band` mouse-follow → ambient drifting `demo-ebb` glow (`.demo-band-glow`);
+  `MouseGradientSection` deleted.
+- Global + rail custom scrollbars (webkit + firefox); no native bars.
+- Section flow: removed hard borders; soft cream edge-fades on dark bands; fixed body
+  gradient for depth.
+- Inner-page depth via `.page-hero`, card shadows, gradient image panel.
+- Consistent transitions: proof cards + nav/footer links; removed "Experimental branch"
+  pill + dev meta copy.
+- Verified responsively at 375/900/1440 + burger-open + wizard via headless Chromium.
+
+**Task 11 (Figma mirror):** in progress — dispatched to sub-agent against file
+`tauCD0NcX2DAAq8eBbIKIJ`.

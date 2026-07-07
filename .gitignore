@@ -2,6 +2,11 @@
 Thumbs.db
 .obsidian/
 
+# Editor / tooling local state (track only the shared MCP server list)
+.codex/
+.vscode/*
+!.vscode/mcp.json
+
 node_modules
 
 # Next.js / React build output

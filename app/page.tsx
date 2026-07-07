@@ -13,7 +13,10 @@ import {
 import { CTAButton } from "@/components/ui/CTAButton";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { VerificationBadge } from "@/components/ui/VerificationBadge";
-import { plannedScale, proofStats, storyPlaceholders } from "@/content/impact";
+import { InquiryWizard } from "@/components/sections/InquiryWizard";
+import { FAQAccordion } from "@/components/ui/FAQAccordion";
+import { plannedScale, proofStats } from "@/content/impact";
+import { inquiryTypes, faqs } from "@/content/contact";
 import { homePage } from "@/content/pages";
 import { programs } from "@/content/programs";
 
@@ -39,17 +42,17 @@ const storyBeats = [
   {
     kicker: "Access",
     title: "AI tools are arriving faster than confidence.",
-    body: "Wasabi's planning source keeps the thesis practical: access is not the same thing as capability.",
+    body: "Access is not the same thing as capability.",
   },
   {
     kicker: "Practice",
     title: "Capability appears when people build real outputs.",
-    body: "Programs are framed around projects, workflows, portfolios, pitches, product stories, and first solutions.",
+    body: "Projects, workflows, portfolios, pitches, and first solutions.",
   },
   {
     kicker: "Proof",
     title: "Credibility improves when proof labels stay visible.",
-    body: "This prototype keeps projected, placeholder, and needs-verification states explicit instead of dressing them up as final claims.",
+    body: "Projected, placeholder, and needs-verification states stay explicit.",
   },
 ];
 
@@ -60,28 +63,28 @@ const sourceVisuals = [
     src: "/assets/extracted/wasabi-ai-learner-cover.png",
     alt: "AI Learner brochure cover",
     title: "AI Learner",
-    note: "Prototype visual, not final approved photography.",
+    note: "Prototype visual, not final photography.",
     href: "/programs",
   },
   {
     src: "/assets/extracted/wasabi-startup-event-cover.png",
     alt: "Startup with AI event brochure cover",
     title: "Builder events",
-    note: "Contains partner-style marks; needs review before final use.",
+    note: "Partner-style marks; needs review.",
     href: "/programs",
   },
   {
     src: "/assets/extracted/wasabi-bharat-builds-cover.png",
     alt: "Bharat Builds campaign cover",
     title: "Hackathon movement",
-    note: "Strong visual; partner/reference permission risk.",
+    note: "Permission risk before final use.",
     href: "/programs",
   },
   {
     src: "/assets/extracted/wasabi-shg-empowerment-cover.png",
     alt: "SHG empowerment source page",
     title: "SHG ecosystem",
-    note: "Grounded source texture; text-heavy.",
+    note: "Grounded source texture.",
     href: "/programs",
   },
 ];
@@ -138,6 +141,10 @@ export default function HomePage() {
               <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-forest md:text-6xl">
                 The gap is not technology. The gap is capability.
               </h2>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <CTAButton label="Partner with Wasabi" href="/#contact" variant="primary" />
+                <CTAButton label="Explore programs" href="/programs" variant="secondary" />
+              </div>
             </div>
             <div className="grid gap-5">
               {storyBeats.map((beat, index) => (
@@ -165,16 +172,21 @@ export default function HomePage() {
                 Programs become stages for confidence.
               </h2>
             </div>
-            <p className="max-w-md leading-7 text-cream/80">
-              Every card keeps its source and verification status visible. The motion is dramatic; the claims stay conservative.
-            </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <CTAButton label="See all programs" href="/programs" variant="primary" />
+              <CTAButton label="Partner with Wasabi" href="/#contact" variant="secondary" className="border-cream text-cream hover:bg-white/10" />
+            </div>
           </div>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {programs.map((program, index) => {
               const Icon = programIcons[index % programIcons.length];
               return (
-                <article key={program.id} className="demo-program-card">
+                <Link
+                  key={program.id}
+                  href="/programs#program-categories"
+                  className="demo-program-card block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+                >
                   <div className="flex items-center justify-between gap-4">
                     <span className="demo-icon-bubble">
                       <Icon aria-hidden="true" size={22} />
@@ -184,8 +196,10 @@ export default function HomePage() {
                   <h3 className="mt-6 font-display text-3xl font-semibold leading-tight text-white">{program.title}</h3>
                   <p className="mt-4 text-sm font-bold uppercase tracking-[0.08em] text-cream/75">{program.audience}</p>
                   <p className="mt-3 leading-7 text-cream/80">{program.format}</p>
-                  <p className="mt-5 break-all text-xs leading-5 text-cream/60">Source: {program.source}</p>
-                </article>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-cream">
+                    View program <ArrowRight aria-hidden="true" size={15} />
+                  </span>
+                </Link>
               );
             })}
           </div>
@@ -199,14 +213,11 @@ export default function HomePage() {
             <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-forest md:text-6xl">
               Source materials create texture, not final proof.
             </h2>
-            <p className="mt-5 leading-7 text-ink/80">
-              These extracted PDF visuals help the demo feel more complete. They remain temporary until image rights, partner marks, and claim status are reviewed.
-            </p>
           </div>
 
           <div className="demo-image-rail mt-12">
             {sourceVisuals.map((visual) => (
-              <Link key={visual.src} href={visual.href} className="demo-source-card" aria-label={`View related programs for ${visual.title}`}>
+              <Link key={visual.src} href={visual.href} className="demo-source-card">
                 <figure>
                   <Image src={visual.src} alt={visual.alt} width={420} height={560} />
                   <figcaption>
@@ -231,9 +242,10 @@ export default function HomePage() {
               <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-forest md:text-6xl">
                 Proof can move. It still cannot pretend.
               </h2>
-              <p className="mt-5 leading-7 text-ink/80">
-                No count-up animation is used for placeholders. The demo highlights proof status instead of manufacturing certainty.
-              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <CTAButton label="Request the evidence" href="/#contact" variant="primary" />
+                <CTAButton label="See the impact" href="/programs#impact" variant="secondary" />
+              </div>
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
               {proofStats.map((stat) => (
@@ -267,19 +279,57 @@ export default function HomePage() {
         </div>
       </ScrollReveal>
 
-      <ScrollReveal as="section" className="demo-final-cta overflow-hidden bg-forest px-4 py-20 text-white sm:px-6 md:py-28 lg:px-8" y={24} delay={0.1}>
+      <ScrollReveal
+        as="section"
+        className="demo-final-cta overflow-hidden bg-forest px-4 py-20 text-white sm:px-6 md:py-28 lg:px-8"
+        y={24}
+        delay={0.1}
+      >
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <Sparkles aria-hidden="true" className="mx-auto text-cream" size={34} />
           <h2 className="mt-6 font-display text-5xl font-semibold leading-tight md:text-7xl">
             Make AI feel like something people can build with.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-cream/80">
-            Every interaction is built to make capability feel within reach — clear, human, and
-            honest about what has been proven and what is still to come.
-          </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <CTAButton label="Start a conversation" href="/contact#inquiry-form" variant="primary" />
+            <CTAButton label="Start a conversation" href="#contact" variant="primary" />
             <CTAButton label="See program structure" href="/programs" variant="secondary" className="border-cream text-cream hover:bg-white/10" />
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal as="section" id="contact" className="scroll-mt-24 py-16 md:py-24" y={24}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-wasabi">Partner with Wasabi</p>
+            <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-forest md:text-6xl">
+              Tell us what you want to build.
+            </h2>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-2.5">
+            {inquiryTypes.map((type) => (
+              <a
+                key={type.title}
+                href="#contact-wizard"
+                className="inline-flex min-h-11 items-center rounded-full border border-line bg-white/55 px-4 py-2 text-sm font-bold text-forest transition hover:border-wasabi hover:text-wasabi focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              >
+                {type.title}
+              </a>
+            ))}
+          </div>
+
+          <div id="contact-wizard" className="mt-10 scroll-mt-24">
+            <InquiryWizard />
+          </div>
+
+          <div className="mt-16 max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-wasabi">Quick answers</p>
+            <h3 className="mt-4 font-display text-3xl font-semibold leading-tight text-forest md:text-4xl">
+              Review-safe answers
+            </h3>
+            <div className="mt-8">
+              <FAQAccordion faqs={faqs} />
+            </div>
           </div>
         </div>
       </ScrollReveal>

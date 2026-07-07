@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { inquiryTypes } from "@/content/contact";
-import { useShakeAnimation } from "@/lib/animations";
+import { prefersReducedMotion, useShakeAnimation } from "@/lib/animations";
 
 type ContactMethod = "email" | "phone";
 
@@ -51,7 +51,7 @@ export function InquiryWizard() {
 
   // Animate inline entry on mount
   useEffect(() => {
-    if (inlineRef.current) {
+    if (inlineRef.current && !prefersReducedMotion()) {
       gsap.from(inlineRef.current, {
         opacity: 0,
         y: 40,
@@ -63,7 +63,7 @@ export function InquiryWizard() {
 
   // Animate overlay entrance with GSAP
   useEffect(() => {
-    if (!active || !overlayRef.current) return;
+    if (!active || !overlayRef.current || prefersReducedMotion()) return;
     gsap.fromTo(
       overlayRef.current,
       { opacity: 0, scale: 0.96 },
@@ -73,7 +73,7 @@ export function InquiryWizard() {
 
   // Animate step content on step change
   useEffect(() => {
-    if (!active || submitted || !stepContentRef.current) return;
+    if (!active || submitted || !stepContentRef.current || prefersReducedMotion()) return;
     const children = stepContentRef.current.children;
     gsap.set(children, { opacity: 0, y: 20 });
     gsap.to(children, {
@@ -87,7 +87,7 @@ export function InquiryWizard() {
 
   // Animate success state
   useEffect(() => {
-    if (!submitted || !stepContentRef.current) return;
+    if (!submitted || !stepContentRef.current || prefersReducedMotion()) return;
     const children = stepContentRef.current.children;
     gsap.set(children, { opacity: 0, y: 24, scale: 0.96 });
     gsap.to(children, {
@@ -170,7 +170,7 @@ export function InquiryWizard() {
     }
     if (stepIndex < total - 1) {
       const currentContent = stepContentRef.current;
-      if (currentContent) {
+      if (currentContent && !prefersReducedMotion()) {
         gsap.to(currentContent.children, {
           opacity: 0,
           y: -12,
@@ -190,7 +190,7 @@ export function InquiryWizard() {
     setError(null);
     if (stepIndex > 0) {
       const currentContent = stepContentRef.current;
-      if (currentContent) {
+      if (currentContent && !prefersReducedMotion()) {
         gsap.to(currentContent.children, {
           opacity: 0,
           y: 12,

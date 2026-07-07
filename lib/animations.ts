@@ -6,13 +6,20 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+export function prefersReducedMotion() {
+  return (
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
+}
+
 export function useScrollReveal(
   ref: RefObject<HTMLElement | null>,
   options?: { delay?: number; y?: number },
 ) {
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || prefersReducedMotion()) return;
 
     const ctx = gsap.context(() => {
       gsap.from(el, {
@@ -56,7 +63,7 @@ export function useShakeAnimation(
 ) {
   useEffect(() => {
     const el = ref.current;
-    if (!el || !trigger) return;
+    if (!el || !trigger || prefersReducedMotion()) return;
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -80,7 +87,7 @@ export function useShakeAnimation(
 export function useCardHover(ref: RefObject<HTMLElement | null>) {
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || prefersReducedMotion()) return;
 
     const ctx = gsap.context(() => {
       el.addEventListener("mouseenter", () => {
@@ -116,7 +123,7 @@ export function useWizardStepAnimation(
 ) {
   useEffect(() => {
     const el = containerRef.current;
-    if (!el) return;
+    if (!el || prefersReducedMotion()) return;
 
     const ctx = gsap.context(() => {
       gsap.from(el.children, {

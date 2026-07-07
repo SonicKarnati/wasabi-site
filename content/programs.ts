@@ -15,7 +15,7 @@ export const programs: Program[] = [
     ],
     status: "needs verification",
     source: "assets/raw/AI Learner Program - Wasabi AI _compressed.pdf",
-    cta: { label: "Ask about AI Learner", href: "/contact", variant: "secondary" },
+    cta: { label: "Ask about AI Learner", href: "/#contact", variant: "secondary" },
   },
   {
     id: "school-movements",
@@ -29,7 +29,7 @@ export const programs: Program[] = [
     ],
     status: "projected",
     source: "assets/raw/KASC Brochure_compressed.pdf",
-    cta: { label: "Discuss a school program", href: "/contact", variant: "secondary" },
+    cta: { label: "Discuss a school program", href: "/#contact", variant: "secondary" },
   },
   {
     id: "shg-enterprise",
@@ -46,7 +46,7 @@ export const programs: Program[] = [
     ],
     status: "needs verification",
     source: "assets/raw/AI for SHG Empowerment_compressed.pdf",
-    cta: { label: "Discuss SHG programs", href: "/contact", variant: "secondary" },
+    cta: { label: "Discuss SHG programs", href: "/#contact", variant: "secondary" },
   },
   {
     id: "public-empowerment",
@@ -56,7 +56,7 @@ export const programs: Program[] = [
     outputs: ["First real solution", "Workflow", "Portfolio proof"],
     status: "needs verification",
     source: "assets/raw/Wasabi x Haryana SCBC- MoSJE_compressed.pdf",
-    cta: { label: "Explore a pilot", href: "/contact", variant: "secondary" },
+    cta: { label: "Explore a pilot", href: "/#contact", variant: "secondary" },
   },
   {
     id: "builder-events",
@@ -67,7 +67,7 @@ export const programs: Program[] = [
     status: "needs verification",
     source:
       "assets/raw/Startup with AI Event Brochure.pdf; assets/raw/Bharat Builds with Manus AI - campaign_compressed.pdf",
-    cta: { label: "Plan a builder event", href: "/contact", variant: "secondary" },
+    cta: { label: "Plan a builder event", href: "/#contact", variant: "secondary" },
   },
   {
     id: "co-branded-bootcamps",
@@ -87,6 +87,6 @@ export const programs: Program[] = [
     ],
     status: "needs verification",
     source: "assets/raw/Adda247AIBootcampByWasabiAI_compressed.pdf",
-    cta: { label: "Discuss co-branded work", href: "/contact", variant: "secondary" },
+    cta: { label: "Discuss co-branded work", href: "/#contact", variant: "secondary" },
   },
 ];

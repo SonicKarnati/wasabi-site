@@ -1241,3 +1241,19 @@ textarea {
     transform: none !important;
   }
 }
+
+/* ---- Inquiry wizard motion ---- */
+@keyframes wizardOverlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes wizardStepIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.wizard-overlay-in { animation: wizardOverlayIn 0.3s ease both; }
+.wizard-step-in { animation: wizardStepIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .wizard-overlay-in,
+  .wizard-step-in { animation: none !important; }
+}

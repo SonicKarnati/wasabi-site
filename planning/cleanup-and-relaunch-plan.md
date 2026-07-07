@@ -131,3 +131,21 @@ Delete on both local + origin, keep only `main`:
 - **2026-07-06 — Animate UI evaluated.** MIT/free, shadcn-CLI distribution on
   Motion+Tailwind, animated Lucide icons → on-theme via `currentColor`. Adopt in
   Phase 1. (See strategy-doc addendum.)
+- **2026-07-06 — WS-B DONE.** Committed clean state (`b9319be`) to `main`, pushed
+  (`7afaf83..b9319be`). Deleted all stale branches: 6 local + 8 origin. `git branch -a`
+  now = `main` + `origin/main` only.
+- **2026-07-06 — WS-C DONE.** Diagnosed: prod domain `wasabi-government-landing.vercel.app`
+  was serving a 25d-old (pre-animation) deploy; deployment-specific URLs 302 to Vercel SSO
+  (that's the "not displaying"). Git auto-deploy is NOT connected. Deployed clean `main` to
+  production via `vercel --prod` → `dpl_GXJ...` (awp9a9xxk), aliased to the prod domain.
+  Verified: HTTP 200 public, serving the animated homepage (assets/extracted + demo-* markers).
+  TODO for user: optionally connect GitHub→Vercel Git integration so `main` pushes auto-deploy.
+- **2026-07-06 — WS-E DONE (pending live Chrome check).** Replaced the monolithic
+  `/contact` form with `components/sections/InquiryWizard.tsx`: an inline entry that
+  expands to a **full-screen focused overlay on first interaction**; one question per
+  step (name → organization → intent cards → email|phone toggle → optional message)
+  with a progress bar, Back/Continue, Enter-to-advance, Esc-to-close, body-scroll lock,
+  focus management, `prefers-reduced-motion`, and a simulated success screen (no
+  backend). Motion is CSS-only for now; Framer Motion polish is a Phase-1 follow-up.
+  build/lint/typecheck green; SSR verified on :3111 (200, wizard entry present, old
+  form gone).

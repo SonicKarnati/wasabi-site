@@ -16,6 +16,8 @@
   color-scheme: light;
   --background: #fff4e3;
   --foreground: #1a1a1a;
+  /* Desaturated fractal-noise grain, reused to dither gradients + section seams */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 * {
@@ -42,15 +44,77 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(55rem 40rem at 88% -8%, rgb(45 106 79 / 0.07), transparent 60%),
-    radial-gradient(48rem 38rem at -12% 22%, rgb(229 120 74 / 0.06), transparent 58%),
-    linear-gradient(180deg, #fff6ea 0%, #fdf1df 55%, #fbeed9 100%);
+  background: linear-gradient(180deg, #fff6ea 0%, #fdf1df 55%, #fbeed9 100%);
   background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-dm-sans), Arial, system-ui, sans-serif;
   margin: 0;
   min-height: 100vh;
+  position: relative;
+}
+
+/*
+ * Living background — two soft gradient blobs (wasabi + terracotta) that
+ * roam across the whole viewport behind every section. Fixed to the viewport
+ * so they drift over the entire page as you scroll, keeping it feeling alive.
+ * Translucent section backgrounds let the glow read through; opaque dark
+ * bands sit on top of it.
+ */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: -25%;
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(40px);
+  will-change: transform;
+}
+
+body::before {
+  background: radial-gradient(38rem 34rem at 50% 50%, rgb(45 106 79 / 0.16), transparent 60%);
+  animation: page-aurora-a 34s ease-in-out infinite alternate;
+}
+
+body::after {
+  background: radial-gradient(32rem 30rem at 50% 50%, rgb(229 120 74 / 0.13), transparent 62%);
+  animation: page-aurora-b 42s ease-in-out infinite alternate;
+}
+
+@keyframes page-aurora-a {
+  0% {
+    transform: translate3d(-16%, -12%, 0) scale(1);
+  }
+
+  33% {
+    transform: translate3d(18%, -4%, 0) scale(1.14);
+  }
+
+  66% {
+    transform: translate3d(10%, 16%, 0) scale(1.06);
+  }
+
+  100% {
+    transform: translate3d(-12%, 6%, 0) scale(1.1);
+  }
+}
+
+@keyframes page-aurora-b {
+  0% {
+    transform: translate3d(20%, 14%, 0) scale(1.08);
+  }
+
+  33% {
+    transform: translate3d(-14%, 8%, 0) scale(1);
+  }
+
+  66% {
+    transform: translate3d(-8%, -14%, 0) scale(1.16);
+  }
+
+  100% {
+    transform: translate3d(16%, -6%, 0) scale(1.04);
+  }
 }
 
 /* Custom scrollbars — never native (thin, on-theme) */
@@ -314,30 +378,48 @@ textarea {
   z-index: 0;
 }
 
-/* Soft edge fades so the cream sections melt into the dark bands (no slide-like cutoff) */
+/*
+ * Soft, grainy edge fades so the cream sections dissolve into the dark bands.
+ * The fractal-noise grain dithers the gradient so the seam reads as texture
+ * rather than a hard band — taller + lower-contrast keeps it subtle.
+ */
 .demo-dark-band::before,
 .demo-final-cta::before {
-  background: linear-gradient(180deg, #fbeed9, transparent);
+  background:
+    var(--grain),
+    linear-gradient(180deg, #fbeed9 0%, rgb(251 238 217 / 0) 100%);
+  background-blend-mode: overlay, normal;
+  background-size: 140px 140px, 100% 100%;
   content: "";
-  height: 5rem;
+  height: 8rem;
   left: 0;
+  opacity: 0.7;
   pointer-events: none;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 1;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
 }
 
 .demo-dark-band::after {
-  background: linear-gradient(0deg, #fbeed9, transparent);
+  background:
+    var(--grain),
+    linear-gradient(0deg, #fbeed9 0%, rgb(251 238 217 / 0) 100%);
+  background-blend-mode: overlay, normal;
+  background-size: 140px 140px, 100% 100%;
   bottom: 0;
   content: "";
-  height: 5rem;
+  height: 8rem;
   left: 0;
+  opacity: 0.7;
   pointer-events: none;
   position: absolute;
   right: 0;
   z-index: 1;
+  -webkit-mask-image: linear-gradient(0deg, #000 0%, transparent 100%);
+  mask-image: linear-gradient(0deg, #000 0%, transparent 100%);
 }
 
 @keyframes demo-ebb {

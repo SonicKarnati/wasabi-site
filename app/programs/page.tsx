@@ -18,7 +18,7 @@ export default function ProgramsPage() {
         description="Wasabi designs programs where participants do not just learn about AI. They build with it."
         primaryCta={{ label: "Discuss a program", href: "/contact", variant: "primary" }}
       />
-      <section className="py-16 md:py-24">
+      <section id="program-categories" className="scroll-mt-24 py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Program categories"

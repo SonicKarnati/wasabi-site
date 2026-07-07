@@ -20,7 +20,7 @@ export const aboutPage = {
     title: "AI is not the hero. Human capability is.",
     description:
       "Wasabi exists to help people realize how capable they truly are in the age of AI.",
-    primaryCta: { label: "See the work", href: "/programs", variant: "primary" as const },
+    primaryCta: { label: "See the work", href: "/programs#program-categories", variant: "primary" as const },
     secondaryCta: { label: "Contact", href: "/contact", variant: "secondary" as const },
   },
   principles: [

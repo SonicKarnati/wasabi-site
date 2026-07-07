@@ -106,11 +106,14 @@ export default function HomePage() {
               <CTAButton {...homePage.hero.primaryCta} />
               <CTAButton {...homePage.hero.secondaryCta} />
             </div>
-            <div className="demo-reveal demo-delay-3 mt-8 grid max-w-xl gap-3 sm:grid-cols-3">
+            <div className="demo-reveal demo-delay-3 mt-8 flex flex-wrap gap-2.5">
               {["Build-first", "Human-centered", "Proof-labeled"].map((item) => (
-                <div key={item} className="rounded-md border border-line bg-white/45 px-4 py-3 text-sm font-bold text-forest shadow-sm">
+                <span
+                  key={item}
+                  className="inline-flex items-center rounded-full border border-wasabi/25 bg-white/55 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.08em] text-forest shadow-sm"
+                >
                   {item}
-                </div>
+                </span>
               ))}
             </div>
           </div>
@@ -240,8 +243,8 @@ export default function HomePage() {
                     </span>
                     <VerificationBadge status={stat.status} />
                   </div>
-                  <p className="mt-5 font-display text-4xl font-bold leading-none text-wasabi">{stat.value}</p>
-                  <p className="mt-2 text-sm font-bold text-forest">{stat.label}</p>
+                  <p className="mt-5 font-display text-3xl font-bold leading-tight text-wasabi">{stat.value}</p>
+                  <p className="mt-2 text-sm font-bold uppercase tracking-[0.08em] text-forest/70">{stat.label}</p>
                   <p className="mt-3 text-sm leading-6 text-muted">{stat.note}</p>
                 </article>
               ))}
@@ -274,7 +277,7 @@ export default function HomePage() {
             honest about what has been proven and what is still to come.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <CTAButton label="Start a conversation" href="/contact" variant="primary" />
+            <CTAButton label="Start a conversation" href="/contact#inquiry-form" variant="primary" />
             <CTAButton label="See program structure" href="/programs" variant="secondary" className="border-cream text-cream hover:bg-white/10" />
           </div>
         </div>

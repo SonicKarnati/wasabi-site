@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { navigationItems, primaryNavCta } from "@/content/navigation";
-import { CTAButton } from "@/components/ui/CTAButton";
+import { navigationItems } from "@/content/navigation";
 import { MobileNav } from "./MobileNav";
 
 export function SiteHeader() {
@@ -25,10 +24,7 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block">
-          <CTAButton {...primaryNavCta} />
-        </div>
-        <MobileNav items={navigationItems} cta={primaryNavCta} />
+        <MobileNav items={navigationItems} />
       </div>
     </header>
   );

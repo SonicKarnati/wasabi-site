@@ -2,26 +2,26 @@ import type { ImpactItem, Stat, Story } from "./types";
 
 export const proofStats: Stat[] = [
   {
-    value: "Pending verification",
-    label: "verified students trained",
+    value: "Verified students trained",
+    label: "Pending verification",
     status: "needs verification",
     note: "Needs verified source record.",
   },
   {
-    value: "Pending verification",
-    label: "verified projects built",
+    value: "Verified projects built",
+    label: "Pending verification",
     status: "needs verification",
     note: "Needs verified source record.",
   },
   {
-    value: "Pending verification",
-    label: "verified schools / institutions reached",
+    value: "Verified schools / institutions reached",
+    label: "Pending verification",
     status: "needs verification",
     note: "Needs verified source record.",
   },
   {
-    value: "Awaiting approval",
-    label: "approved partner proof",
+    value: "Approved partner proof",
+    label: "Awaiting approval",
     status: "needs verification",
     note: "Needs partner permission.",
   },

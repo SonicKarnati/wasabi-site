@@ -3,15 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import type { CTA } from "@/content/types";
-import { CTAButton } from "@/components/ui/CTAButton";
 
 type MobileNavProps = {
   items: Array<{ label: string; href: string }>;
-  cta: CTA;
 };
 
-export function MobileNav({ items, cta }: MobileNavProps) {
+export function MobileNav({ items }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelId = "mobile-navigation";
@@ -69,7 +66,6 @@ export function MobileNav({ items, cta }: MobileNavProps) {
                 {item.label}
               </Link>
             ))}
-            <CTAButton {...cta} className="mt-2 w-full" onClick={() => setIsOpen(false)} />
           </nav>
         </div>
       ) : null}

@@ -15,9 +15,9 @@ export default function AboutPage() {
     <>
       <HeroSection {...aboutPage.hero} />
       <section className="py-16 md:py-24">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
           <QuoteBlock quote="People become capable by creating." attribution="Wasabi brand principle" />
-          <div className="self-center">
+          <div>
             <SectionHeader
               eyebrow="The Wasabi Moment"
               title="A shift in what someone believes they can do"
@@ -44,7 +44,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="py-16">
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-lg border border-line bg-white/50 p-8 shadow-sm">
             <SectionHeader

@@ -149,3 +149,9 @@ Delete on both local + origin, keep only `main`:
   backend). Motion is CSS-only for now; Framer Motion polish is a Phase-1 follow-up.
   build/lint/typecheck green; SSR verified on :3111 (200, wizard entry present, old
   form gone).
+- **2026-07-06 — WS-F PENDING USER INPUT.** Figma MCP authorized (Saunak Karnati,
+  starter tier). Blocker: need the target Figma file URL/key ("Wasabi Website Design")
+  — not referenced anywhere in the repo. Once provided, dispatch a sub-agent using the
+  figma-generate-design + figma-use skills to mirror the live pages (home, about,
+  programs, impact, contact) as flat frames with the ACTUAL elements (text, buttons,
+  cards, sections), not just colors/styles. Alternatively create a fresh mirror file.

@@ -2,27 +2,27 @@ import type { ImpactItem, Stat, Story } from "./types";
 
 export const proofStats: Stat[] = [
   {
-    value: "[Placeholder]",
+    value: "Pending verification",
     label: "verified students trained",
-    status: "placeholder",
+    status: "needs verification",
     note: "Needs verified source record.",
   },
   {
-    value: "[Placeholder]",
+    value: "Pending verification",
     label: "verified projects built",
-    status: "placeholder",
+    status: "needs verification",
     note: "Needs verified source record.",
   },
   {
-    value: "[Placeholder]",
+    value: "Pending verification",
     label: "verified schools / institutions reached",
-    status: "placeholder",
+    status: "needs verification",
     note: "Needs verified source record.",
   },
   {
-    value: "[Placeholder]",
+    value: "Awaiting approval",
     label: "approved partner proof",
-    status: "placeholder",
+    status: "needs verification",
     note: "Needs partner permission.",
   },
 ];
@@ -60,26 +60,28 @@ export const plannedScale: ImpactItem[] = [
     status: "projected",
   },
   {
-    title: "[Placeholder: other planned scale]",
-    description: "[Placeholder: planned initiative]",
-    status: "placeholder",
+    title: "AI Empowerment for SHG Ecosystems",
+    metric:
+      "Phased Track A / Track B workshops with voice-first, regional-language delivery across SHG communities.",
+    description: "Reach and enterprise outcomes remain projected until pilot data is verified.",
+    status: "projected",
   },
 ];
 
 export const storyPlaceholders: Story[] = [
   {
-    title: "[Placeholder: approved student story]",
+    title: "A Kanpur government-school student builds a first working project",
     summary: "Student story pending consent, source review, and image rights.",
-    status: "placeholder",
+    status: "needs verification",
   },
   {
-    title: "[Placeholder: approved SHG/community story]",
+    title: "An SHG entrepreneur builds a WhatsApp catalog for her enterprise",
     summary: "Community story pending pilot documentation and consent.",
-    status: "placeholder",
+    status: "needs verification",
   },
   {
-    title: "[Placeholder: approved school or district story]",
+    title: "A school joins the Kanpur AI School Championship",
     summary: "Institutional story pending approval.",
-    status: "placeholder",
+    status: "needs verification",
   },
 ];

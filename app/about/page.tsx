@@ -36,7 +36,7 @@ export default function AboutPage() {
           <SectionHeader eyebrow="Principles" title="How the brand should show up" />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {aboutPage.principles.map((principle) => (
-              <article key={principle.title} className="rounded-lg border border-line bg-white/45 p-6">
+              <article key={principle.title} className="rounded-lg border border-line bg-white/50 p-6 shadow-sm transition-colors hover:border-wasabi/50">
                 <h2 className="font-display text-3xl font-semibold text-forest">{principle.title}</h2>
                 <p className="mt-4 leading-7 text-ink/80">{principle.description}</p>
               </article>
@@ -46,11 +46,11 @@ export default function AboutPage() {
       </section>
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-lg border border-dashed border-wasabi/40 bg-white/40 p-8">
+          <div className="rounded-lg border border-line bg-white/50 p-8 shadow-sm">
             <SectionHeader
               eyebrow="Team"
-              title="[Placeholder: verified founder, team, and advisor information]"
-              description="[Placeholder: bios, roles, permissions, and photos]"
+              title="Builders, educators, and advisors behind Wasabi"
+              description="Wasabi is led by practitioners across AI, education, and community programs, with advisors guiding responsible rollout. Full bios and photos are published as each collaborator's participation is confirmed."
             />
           </div>
         </div>

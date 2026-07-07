@@ -42,11 +42,42 @@ html {
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(55rem 40rem at 88% -8%, rgb(45 106 79 / 0.07), transparent 60%),
+    radial-gradient(48rem 38rem at -12% 22%, rgb(229 120 74 / 0.06), transparent 58%),
+    linear-gradient(180deg, #fff6ea 0%, #fdf1df 55%, #fbeed9 100%);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-dm-sans), Arial, system-ui, sans-serif;
   margin: 0;
   min-height: 100vh;
+}
+
+/* Custom scrollbars — never native (thin, on-theme) */
+* {
+  scrollbar-color: rgb(45 106 79 / 0.42) transparent;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(45 106 79 / 0.38);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(45 106 79 / 0.6);
+  background-clip: padding-box;
 }
 
 .font-display {
@@ -248,9 +279,13 @@ textarea {
   padding: 1.5rem;
 }
 
+.demo-story-card,
+.demo-proof-card {
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
 .demo-story-card {
   transform-origin: center left;
-  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .demo-story-card:hover,
@@ -263,13 +298,63 @@ textarea {
 }
 
 .demo-dark-band {
-  --mouse-x: 12%;
-  --mouse-y: 24%;
   background:
-    radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgb(229 120 74 / 0.18), transparent 18rem),
-    radial-gradient(circle at 12% 24%, rgb(45 106 79 / 0.52), transparent 24rem),
+    radial-gradient(circle at 16% 26%, rgb(45 106 79 / 0.5), transparent 24rem),
     linear-gradient(180deg, #11241f 0%, #0b1915 100%);
-  transition: background 220ms ease;
+  position: relative;
+}
+
+/* Ambient, ever-drifting glow — alive but never reacts to input */
+.demo-band-glow {
+  animation: demo-ebb 15s ease-in-out infinite alternate;
+  background: radial-gradient(circle at 50% 45%, rgb(229 120 74 / 0.22), transparent 20rem);
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+/* Soft edge fades so the cream sections melt into the dark bands (no slide-like cutoff) */
+.demo-dark-band::before,
+.demo-final-cta::before {
+  background: linear-gradient(180deg, #fbeed9, transparent);
+  content: "";
+  height: 5rem;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.demo-dark-band::after {
+  background: linear-gradient(0deg, #fbeed9, transparent);
+  bottom: 0;
+  content: "";
+  height: 5rem;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+@keyframes demo-ebb {
+  0% {
+    opacity: 0.5;
+    transform: translate3d(-12%, -8%, 0) scale(1);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: translate3d(8%, 6%, 0) scale(1.15);
+  }
+
+  100% {
+    opacity: 0.6;
+    transform: translate3d(12%, -4%, 0) scale(1.05);
+  }
 }
 
 .demo-program-card {
@@ -300,6 +385,26 @@ textarea {
   overflow-x: auto;
   padding-bottom: 1rem;
   scroll-snap-type: x mandatory;
+  scrollbar-color: rgb(45 106 79 / 0.55) rgb(45 106 79 / 0.08);
+  scrollbar-width: thin;
+}
+
+.demo-image-rail::-webkit-scrollbar {
+  height: 8px;
+}
+
+.demo-image-rail::-webkit-scrollbar-track {
+  background: rgb(45 106 79 / 0.08);
+  border-radius: 999px;
+}
+
+.demo-image-rail::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, rgb(45 106 79 / 0.65), rgb(229 120 74 / 0.6));
+  border-radius: 999px;
+}
+
+.demo-image-rail::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, rgb(45 106 79 / 0.9), rgb(229 120 74 / 0.85));
 }
 
 .demo-source-card {
@@ -373,6 +478,7 @@ textarea {
   background:
     radial-gradient(circle at 50% -20%, rgb(45 106 79 / 0.7), transparent 32rem),
     linear-gradient(180deg, #11241f 0%, #08130f 100%);
+  position: relative;
 }
 
 @keyframes demo-rise {
@@ -1256,4 +1362,12 @@ textarea {
 @media (prefers-reduced-motion: reduce) {
   .wizard-overlay-in,
   .wizard-step-in { animation: none !important; }
+}
+
+/* Inner-page hero ambience — gives about/programs/impact/contact the homepage's depth */
+.page-hero {
+  position: relative;
+  background:
+    radial-gradient(circle at 82% 10%, rgb(45 106 79 / 0.13), transparent 30rem),
+    radial-gradient(circle at 4% 94%, rgb(229 120 74 / 0.11), transparent 26rem);
 }

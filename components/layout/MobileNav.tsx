@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import type { CTA } from "@/content/types";
 import { CTAButton } from "@/components/ui/CTAButton";
 
@@ -38,20 +39,32 @@ export function MobileNav({ items, cta }: MobileNavProps) {
         type="button"
         aria-expanded={isOpen}
         aria-controls={panelId}
+        aria-label={isOpen ? "Close menu" : "Open menu"}
         onClick={() => setIsOpen((open) => !open)}
-        className="min-h-11 rounded-md border border-line px-3 py-2 text-sm font-bold text-forest"
+        className="grid size-11 place-items-center rounded-md border border-line text-forest transition-colors hover:border-wasabi hover:text-wasabi focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
       >
-        Menu
+        <span className="relative block size-6">
+          <Menu
+            aria-hidden="true"
+            size={24}
+            className={`absolute inset-0 transition-all duration-200 ${isOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"}`}
+          />
+          <X
+            aria-hidden="true"
+            size={24}
+            className={`absolute inset-0 transition-all duration-200 ${isOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"}`}
+          />
+        </span>
       </button>
       {isOpen ? (
-        <div id={panelId} className="absolute left-4 right-4 top-20 z-20 rounded-lg border border-line bg-cream p-4 shadow-sm">
+        <div id={panelId} className="absolute left-4 right-4 top-20 z-20 rounded-lg border border-line bg-cream p-4 shadow-lg">
           <nav aria-label="Mobile navigation" className="grid gap-2">
             {items.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="rounded-md px-3 py-3 text-sm font-bold text-forest hover:bg-white"
+                className="rounded-md px-3 py-3 text-sm font-bold text-forest transition-colors hover:bg-white"
               >
                 {item.label}
               </Link>

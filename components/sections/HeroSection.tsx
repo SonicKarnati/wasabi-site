@@ -19,7 +19,7 @@ export function HeroSection({
   note,
 }: HeroSectionProps) {
   return (
-    <section className="border-b border-line">
+    <section className="page-hero">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-[1.2fr_0.8fr] md:py-24 lg:px-8">
         <div>
           {eyebrow ? (
@@ -34,12 +34,13 @@ export function HeroSection({
             {secondaryCta ? <CTAButton {...secondaryCta} /> : null}
           </div>
         </div>
-        <div className="rounded-lg border border-line bg-white/45 p-6">
+        <div className="rounded-lg border border-line bg-white/55 p-6 shadow-sm">
           <p className="font-display text-3xl italic leading-snug text-wasabi">
             People become capable by creating.
           </p>
           <p className="mt-5 leading-7 text-ink/75">
-            This visual space is reserved for rights-cleared Wasabi photography or a restrained line/photo treatment.
+            Wasabi turns AI exposure into real, finished work — projects, portfolios, and first
+            solutions people can point to and build on.
           </p>
           {note ? <p className="mt-5 text-sm font-bold text-forest">{note}</p> : null}
         </div>

@@ -7,7 +7,7 @@ type ContactCTAProps = {
 
 export function ContactCTA({
   title = "Bring build-first AI capability to your community or institution.",
-  description = "Tell us what you are trying to build, and keep unverified proof as placeholders until review.",
+  description = "Tell us what you are trying to build, and we will route the conversation to the right people.",
 }: ContactCTAProps) {
   return (
     <section className="py-16">

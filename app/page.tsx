@@ -10,7 +10,6 @@ import {
   Sparkles,
   UsersRound,
 } from "lucide-react";
-import { MouseGradientSection } from "@/components/sections/MouseGradientSection";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { VerificationBadge } from "@/components/ui/VerificationBadge";
 import { plannedScale, proofStats, storyPlaceholders } from "@/content/impact";
@@ -89,10 +88,10 @@ const sourceVisuals = [
 export default function HomePage() {
   return (
     <>
-      <section className="demo-hero overflow-hidden border-b border-line">
+      <section className="demo-hero overflow-hidden">
         <div className="demo-glow demo-glow-one" aria-hidden="true" />
         <div className="demo-glow demo-glow-two" aria-hidden="true" />
-        <div className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        <div className="mx-auto grid min-h-[calc(100svh-73px)] max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
           <div className="relative z-10">
             <p className="demo-reveal text-xs font-bold uppercase tracking-[0.28em] text-wasabi">{homePage.hero.eyebrow}</p>
             <h1 className="demo-headline mt-5 max-w-5xl font-display text-5xl font-semibold leading-[0.98] text-forest sm:text-6xl lg:text-7xl">
@@ -101,7 +100,7 @@ export default function HomePage() {
               <span>In The Age Of AI</span>
             </h1>
             <p className="demo-reveal demo-delay-1 mt-8 max-w-2xl text-lg leading-8 text-ink/80">
-              {homePage.hero.description} This experimental branch pushes the visual storytelling further while keeping proof labels honest.
+              {homePage.hero.description}
             </p>
             <div className="demo-reveal demo-delay-2 mt-9 flex flex-col gap-3 sm:flex-row">
               <CTAButton {...homePage.hero.primaryCta} />
@@ -152,8 +151,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <MouseGradientSection className="demo-dark-band overflow-hidden bg-forest py-16 text-cream md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="demo-dark-band overflow-hidden bg-forest py-16 text-cream md:py-24">
+        <div className="demo-band-glow" aria-hidden="true" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-cream/75">What Wasabi does</p>
@@ -186,7 +186,7 @@ export default function HomePage() {
             })}
           </div>
         </div>
-      </MouseGradientSection>
+      </section>
 
       <section className="overflow-hidden py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -264,21 +264,18 @@ export default function HomePage() {
       </section>
 
       <section className="demo-final-cta overflow-hidden bg-forest px-4 py-20 text-white sm:px-6 md:py-28 lg:px-8">
-        <div className="mx-auto max-w-5xl text-center">
+        <div className="relative z-10 mx-auto max-w-5xl text-center">
           <Sparkles aria-hidden="true" className="mx-auto text-cream" size={34} />
           <h2 className="mt-6 font-display text-5xl font-semibold leading-tight md:text-7xl">
             Make AI feel like something people can build with.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-cream/80">
-            This branch is intentionally more animated than the likely final site. Keep the moments that increase clarity and remove anything that outshines trust.
+            Every interaction is built to make capability feel within reach — clear, human, and
+            honest about what has been proven and what is still to come.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-            <CTAButton label="Review the prototype" href="/contact" variant="primary" />
+            <CTAButton label="Start a conversation" href="/contact" variant="primary" />
             <CTAButton label="See program structure" href="/programs" variant="secondary" className="border-cream text-cream hover:bg-white/10" />
-          </div>
-          <div className="mt-10 inline-flex items-center gap-2 rounded-full border border-cream/25 px-5 py-3 text-sm font-bold text-cream/80">
-            Experimental branch
-            <ArrowRight aria-hidden="true" size={16} />
           </div>
         </div>
       </section>

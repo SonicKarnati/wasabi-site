@@ -5,7 +5,7 @@ export const programs: Program[] = [
     id: "ai-learner",
     title: "AI Learner / Student Programs",
     audience: "Class 6-12 students, schools, and parents",
-    format: "2-day live online bootcamp + [Placeholder: current monthly guidance terms]",
+    format: "2-day live online bootcamp + 1 year of monthly mentor guidance",
     outputs: [
       "3-4 projects",
       "AI tools exposure",

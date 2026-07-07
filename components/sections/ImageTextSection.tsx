@@ -11,11 +11,11 @@ export function ImageTextSection({ eyebrow, title, description, points = [] }: I
   return (
     <section className="py-16 md:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
-        <div className="rounded-lg border border-line bg-white/40 p-6">
-          <div className="aspect-[4/3] rounded-md border border-dashed border-wasabi/40 bg-cream p-6">
-            <p className="font-display text-3xl italic text-wasabi">[Placeholder: rights-cleared image]</p>
-            <p className="mt-4 text-sm leading-6 text-muted">
-              Use real Wasabi environments, people mid-action, or approved line/photo treatment.
+        <div className="overflow-hidden rounded-lg border border-line bg-white/50 p-4 shadow-sm">
+          <div className="flex aspect-[4/3] flex-col justify-end rounded-md bg-gradient-to-br from-forest via-wasabi to-forest p-7 text-cream">
+            <p className="font-display text-3xl italic leading-snug text-cream">Real Bharat, mid-build.</p>
+            <p className="mt-3 text-sm leading-6 text-cream/85">
+              Classrooms, SHG enterprises, and young builders creating first working solutions.
             </p>
           </div>
         </div>

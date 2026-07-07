@@ -19,7 +19,7 @@ export const inquiryTypes = [
   },
   {
     title: "Media / Sponsor",
-    description: "[Placeholder: decide whether this belongs in version 1]",
+    description: "Press, storytelling, or sponsorship of a build-first program, event, or championship.",
   },
 ];
 

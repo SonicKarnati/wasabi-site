@@ -5,6 +5,7 @@ import { TrustStrip } from "@/components/sections/TrustStrip";
 import { ImpactCard } from "@/components/ui/ImpactCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StoryCard } from "@/components/ui/StoryCard";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { outputExamples, plannedScale, proofStats, storyPlaceholders } from "@/content/impact";
 
 export const metadata: Metadata = {
@@ -21,8 +22,10 @@ export default function ImpactPage() {
         primaryCta={{ label: "Request impact details", href: "/contact", variant: "primary" }}
         secondaryCta={{ label: "Partner on a pilot", href: "/contact", variant: "secondary" }}
       />
-      <TrustStrip stats={proofStats} />
-      <section className="py-16 md:py-24">
+      <ScrollReveal as="div" y={24}>
+        <TrustStrip stats={proofStats} />
+      </ScrollReveal>
+      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Outputs" title="What participants build" />
           <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -31,8 +34,8 @@ export default function ImpactPage() {
             ))}
           </div>
         </div>
-      </section>
-      <section className="py-16 md:py-24">
+      </ScrollReveal>
+      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Planned scale"
@@ -45,8 +48,8 @@ export default function ImpactPage() {
             ))}
           </div>
         </div>
-      </section>
-      <section className="py-16 md:py-24">
+      </ScrollReveal>
+      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Case studies" title="Stories that need approval" />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -55,8 +58,10 @@ export default function ImpactPage() {
             ))}
           </div>
         </div>
-      </section>
-      <ContactCTA title="Want the evidence behind a program?" />
+      </ScrollReveal>
+      <ScrollReveal as="div" y={24}>
+        <ContactCTA title="Want the evidence behind a program?" />
+      </ScrollReveal>
     </>
   );
 }

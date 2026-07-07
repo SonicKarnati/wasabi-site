@@ -26,14 +26,10 @@ accomplish.
 
 ## MCP servers
 
-Hosted OAuth MCP server — no API keys stored in-repo. The canonical, tracked
+Hosted OAuth MCP servers — no API keys stored in-repo. The canonical, tracked
 server list lives in `.vscode/mcp.json`; register the same server/URL pairs in
 whichever MCP client you use (Claude Code, Codex, Cursor, etc.). Local per-tool
 config (e.g. `.codex/`) is gitignored — recreate it locally.
-
-| Server | URL | Purpose |
-|---|---|---|
-| figma | `https://mcp.figma.com/mcp` | Read/update the "Wasabi Website Design" Figma file; mirror the live site into Figma |
 
 ## Visual excellence direction
 

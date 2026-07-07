@@ -11,6 +11,7 @@ import {
   UsersRound,
 } from "lucide-react";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { VerificationBadge } from "@/components/ui/VerificationBadge";
 import { plannedScale, proofStats, storyPlaceholders } from "@/content/impact";
 import { homePage } from "@/content/pages";
@@ -129,7 +130,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
             <div className="demo-sticky-copy">
@@ -152,9 +153,9 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
-      <section className="demo-dark-band overflow-hidden bg-forest py-16 text-cream md:py-24">
+      <ScrollReveal as="section" className="demo-dark-band overflow-hidden bg-forest py-16 text-cream md:py-24" y={24}>
         <div className="demo-band-glow" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
@@ -189,9 +190,9 @@ export default function HomePage() {
             })}
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
-      <section className="overflow-hidden py-16 md:py-24">
+      <ScrollReveal as="section" className="overflow-hidden py-16 md:py-24" y={24}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-wasabi">Source visual rail</p>
@@ -220,9 +221,9 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
-      <section className="py-16 md:py-24">
+      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
@@ -264,9 +265,9 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
-      <section className="demo-final-cta overflow-hidden bg-forest px-4 py-20 text-white sm:px-6 md:py-28 lg:px-8">
+      <ScrollReveal as="section" className="demo-final-cta overflow-hidden bg-forest px-4 py-20 text-white sm:px-6 md:py-28 lg:px-8" y={24} delay={0.1}>
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <Sparkles aria-hidden="true" className="mx-auto text-cream" size={34} />
           <h2 className="mt-6 font-display text-5xl font-semibold leading-tight md:text-7xl">
@@ -281,7 +282,7 @@ export default function HomePage() {
             <CTAButton label="See program structure" href="/programs" variant="secondary" className="border-cream text-cream hover:bg-white/10" />
           </div>
         </div>
-      </section>
+      </ScrollReveal>
     </>
   );
 }

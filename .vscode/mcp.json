@@ -1,9 +1,5 @@
 {
   "servers": {
-    "figma": {
-      "type": "http",
-      "url": "https://mcp.figma.com/mcp"
-    },
     "higgsfield": {
       "type": "http",
       "url": "https://mcp.higgsfield.ai/mcp"

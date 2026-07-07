@@ -5,7 +5,7 @@ type QuoteBlockProps = {
 
 export function QuoteBlock({ quote, attribution }: QuoteBlockProps) {
   return (
-    <figure className="rounded-lg border border-line bg-white/45 p-7">
+    <figure tabIndex={0} className="rounded-lg border border-line bg-white/45 p-7 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta outline-none">
       <blockquote className="font-display text-3xl italic leading-snug text-wasabi md:text-4xl">
         {quote}
       </blockquote>

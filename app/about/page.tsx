@@ -5,6 +5,7 @@ import { ImageTextSection } from "@/components/sections/ImageTextSection";
 import { QuoteBlock } from "@/components/ui/QuoteBlock";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { aboutPage } from "@/content/pages";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "About",
@@ -14,7 +15,7 @@ export default function AboutPage() {
   return (
     <>
       <HeroSection {...aboutPage.hero} />
-      <section className="py-16 md:py-24">
+      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
           <QuoteBlock quote="People become capable by creating." attribution="Wasabi brand principle" />
           <div>
@@ -25,13 +26,15 @@ export default function AboutPage() {
             />
           </div>
         </div>
-      </section>
-      <ImageTextSection
-        eyebrow="Bharat context"
-        title="A future built from real Bharat"
-        description="Villages, tier-2 cities, classrooms, SHG ecosystems, and young builders are not waiting for a distant AI future. They need confidence, exposure, and practical tools now."
-      />
-      <section className="py-16 md:py-24">
+      </ScrollReveal>
+      <ScrollReveal as="div" y={24}>
+        <ImageTextSection
+          eyebrow="Bharat context"
+          title="A future built from real Bharat"
+          description="Villages, tier-2 cities, classrooms, SHG ecosystems, and young builders are not waiting for a distant AI future. They need confidence, exposure, and practical tools now."
+        />
+      </ScrollReveal>
+      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Principles" title="How the brand should show up" />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -43,8 +46,8 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
-      <section className="py-16 md:py-24">
+      </ScrollReveal>
+      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-lg border border-line bg-white/50 p-8 shadow-sm">
             <SectionHeader
@@ -54,8 +57,10 @@ export default function AboutPage() {
             />
           </div>
         </div>
-      </section>
-      <ContactCTA title="Explore how Wasabi turns AI exposure into capability." />
+      </ScrollReveal>
+      <ScrollReveal as="div" y={24}>
+        <ContactCTA title="Explore how Wasabi turns AI exposure into capability." />
+      </ScrollReveal>
     </>
   );
 }

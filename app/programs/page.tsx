@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { ProgramCard } from "@/components/ui/ProgramCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { programs } from "@/content/programs";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Programs",
@@ -18,7 +19,7 @@ export default function ProgramsPage() {
         description="Wasabi designs programs where participants do not just learn about AI. They build with it."
         primaryCta={{ label: "Discuss a program", href: "/contact", variant: "primary" }}
       />
-      <section id="program-categories" className="scroll-mt-24 py-16 md:py-24">
+      <ScrollReveal as="section" id="program-categories" className="scroll-mt-24 py-16 md:py-24" y={24}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Program categories"
@@ -31,8 +32,8 @@ export default function ProgramsPage() {
             ))}
           </div>
         </div>
-      </section>
-      <section className="bg-forest py-16 text-cream md:py-24">
+      </ScrollReveal>
+      <ScrollReveal as="section" className="bg-forest py-16 text-cream md:py-24" y={24}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Review rule"
@@ -41,8 +42,10 @@ export default function ProgramsPage() {
             dark
           />
         </div>
-      </section>
-      <ContactCTA title="Want to bring a build-first AI program to your audience?" />
+      </ScrollReveal>
+      <ScrollReveal as="div" y={24}>
+        <ContactCTA title="Want to bring a build-first AI program to your audience?" />
+      </ScrollReveal>
     </>
   );
 }

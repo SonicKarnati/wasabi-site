@@ -22,7 +22,7 @@ export function TrustStrip({ stats }: TrustStripProps) {
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
-            <StatBlock key={stat.label} stat={stat} />
+            <StatBlock key={`${stat.value}-${stat.label}`} stat={stat} />
           ))}
         </div>
       </div>

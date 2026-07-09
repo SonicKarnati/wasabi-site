@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { LineHoverLink } from "@/components/ui/line-hover-link";
 import { navigationItems } from "@/content/navigation";
 import { siteInfo } from "@/content/site";
 
@@ -22,9 +22,9 @@ export function SiteFooter() {
           <h2 className="text-sm font-bold uppercase tracking-[0.14em] text-white">Navigate</h2>
           <nav aria-label="Footer navigation" className="mt-5 grid gap-3">
             {navigationItems.map((item) => (
-              <Link key={item.href} href={item.href} className="text-sm text-cream/80 transition-colors hover:text-white">
+              <LineHoverLink key={item.href} href={item.href} variant="slide" className="text-sm text-cream/80 transition-colors hover:text-white">
                 {item.label}
-              </Link>
+              </LineHoverLink>
             ))}
           </nav>
         </div>

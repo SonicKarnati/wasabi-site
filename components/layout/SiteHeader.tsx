@@ -4,8 +4,9 @@ import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { navigationItems } from "@/content/navigation";
-import { MobileNav } from "./MobileNav";
 import { useHeaderScroll } from "@/lib/animations";
+import { MobileNav } from "./MobileNav";
+import { SiteSpotlightNav } from "./SiteSpotlightNav";
 
 export function SiteHeader() {
   const ref = useRef<HTMLElement>(null);
@@ -27,13 +28,7 @@ export function SiteHeader() {
             className="h-10 w-auto"
           />
         </Link>
-        <nav aria-label="Primary navigation" className="hidden items-center gap-7 md:flex">
-          {navigationItems.slice(1).map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm font-bold text-forest transition-colors hover:text-wasabi focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <SiteSpotlightNav />
         <MobileNav items={navigationItems} />
       </div>
     </header>

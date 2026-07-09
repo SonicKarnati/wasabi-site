@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ImageTextSection } from "@/components/sections/ImageTextSection";
 import { QuoteBlock } from "@/components/ui/QuoteBlock";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Skiper19 } from "@/components/ui/skiper-ui/skiper19";
 import { aboutPage } from "@/content/pages";
-import { ScrollReveal } from "@/components/motion/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "About",
@@ -32,8 +33,15 @@ export default function AboutPage() {
           eyebrow="Bharat context"
           title="A future built from real Bharat"
           description="Villages, tier-2 cities, classrooms, SHG ecosystems, and young builders are not waiting for a distant AI future. They need confidence, exposure, and practical tools now."
+          image={{
+            src: "/assets/generated/bharat-classroom-learner.png",
+            alt: "A student working on a laptop at a wooden desk in a sunlit classroom",
+            caption: "Real Bharat, mid-build.",
+            note: "Illustrative visual — not program photography",
+          }}
         />
       </ScrollReveal>
+      <Skiper19 />
       <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Principles" title="How the brand should show up" />

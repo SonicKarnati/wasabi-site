@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProgramExplorer } from "@/components/sections/ProgramExplorer";
 import { TrustStrip } from "@/components/sections/TrustStrip";
+import { CTAButton } from "@/components/ui/CTAButton";
 import { ImpactCard } from "@/components/ui/ImpactCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Skiper30 } from "@/components/ui/skiper-ui/skiper30";
 import { StoryCard } from "@/components/ui/StoryCard";
-import { CTAButton } from "@/components/ui/CTAButton";
-import { ScrollReveal } from "@/components/motion/ScrollReveal";
-import { programs } from "@/content/programs";
 import { outputExamples, plannedScale, proofStats, storyPlaceholders } from "@/content/impact";
+import { programs } from "@/content/programs";
 
 export const metadata: Metadata = {
   title: "Programs & Impact",
@@ -51,6 +52,17 @@ export default function ProgramsPage() {
             <CTAButton label="Discuss a program" href="/#contact" variant="primary" />
             <CTAButton label="See the impact" href="#impact" variant="secondary" className="border-cream text-cream hover:bg-white/10" />
           </div>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+          <SectionHeader
+            eyebrow="Program texture"
+            title="Source materials can move without becoming final proof."
+            description="The parallax rail uses source visuals as program context while the copy keeps permission, claim, and approval status explicit."
+          />
+          <Skiper30 />
         </div>
       </ScrollReveal>
 

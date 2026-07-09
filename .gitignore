@@ -6,6 +6,8 @@ Thumbs.db
 .codex/
 .vscode/*
 !.vscode/mcp.json
+opencode.json
+skill-observations/
 
 node_modules
 

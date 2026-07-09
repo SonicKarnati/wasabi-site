@@ -42,7 +42,7 @@ config (e.g. `.codex/`) is gitignored — recreate it locally.
 ## Visual excellence direction
 
 On-page beauty — interactive/rotatable 3D and high-craft motion — is built with
-**code-driven** libraries (react-three-fiber for 3D; Framer Motion / GSAP for
+**code-driven** libraries (react-three-fiber for 3D; Framer Motion for
 motion), **not** Remotion. See
 [planning/visual-excellence-strategy.md](planning/visual-excellence-strategy.md).
 A prior Remotion + Higgsfield prototype ("design-x") was removed 2026-07 because

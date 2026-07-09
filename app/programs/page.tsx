@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProgramExplorer } from "@/components/sections/ProgramExplorer";
@@ -27,7 +26,7 @@ export default function ProgramsPage() {
         secondaryCta={{ label: "See the impact", href: "#impact", variant: "secondary" }}
       />
 
-      <ScrollReveal as="section" id="program-categories" className="scroll-mt-24 py-16 md:py-24" y={24}>
+      <section id="program-categories" className="scroll-mt-24 py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Program categories"
@@ -38,9 +37,9 @@ export default function ProgramsPage() {
             <ProgramExplorer programs={programs} />
           </div>
         </div>
-      </ScrollReveal>
+      </section>
 
-      <ScrollReveal as="section" className="bg-forest py-16 text-cream md:py-24" y={24}>
+      <section className="bg-forest py-16 text-cream md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Review rule"
@@ -53,9 +52,9 @@ export default function ProgramsPage() {
             <CTAButton label="See the impact" href="#impact" variant="secondary" className="border-cream text-cream hover:bg-white/10" />
           </div>
         </div>
-      </ScrollReveal>
+      </section>
 
-      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
+      <section className="py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <SectionHeader
             eyebrow="Program texture"
@@ -64,13 +63,13 @@ export default function ProgramsPage() {
           />
           <Skiper30 />
         </div>
-      </ScrollReveal>
+      </section>
 
-      <ScrollReveal as="div" id="impact" className="scroll-mt-24" y={24}>
+      <div id="impact" className="scroll-mt-24">
         <TrustStrip stats={proofStats} />
-      </ScrollReveal>
+      </div>
 
-      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Outputs" title="What participants build" />
           <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -79,9 +78,9 @@ export default function ProgramsPage() {
             ))}
           </div>
         </div>
-      </ScrollReveal>
+      </section>
 
-      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Planned scale"
@@ -94,9 +93,9 @@ export default function ProgramsPage() {
             ))}
           </div>
         </div>
-      </ScrollReveal>
+      </section>
 
-      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Case studies" title="Stories that need approval" />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -105,11 +104,9 @@ export default function ProgramsPage() {
             ))}
           </div>
         </div>
-      </ScrollReveal>
+      </section>
 
-      <ScrollReveal as="div" y={24}>
-        <ContactCTA title="Want to bring a build-first AI program to your audience?" />
-      </ScrollReveal>
+      <ContactCTA title="Want to bring a build-first AI program to your audience?" />
     </>
   );
 }

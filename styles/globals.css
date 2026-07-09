@@ -164,16 +164,6 @@ textarea {
   transition: outline-offset 120ms ease, outline-color 120ms ease;
 }
 
-/* Scroll-triggered header background transition */
-header {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.header-scrolled {
-  background-color: #fff4e3 !important;
-  box-shadow: 0 1px 4px rgb(17 36 31 / 0.08);
-}
-
 /* Enhanced card focus and touch targets */
 article:focus-visible,
 details:focus-visible {
@@ -194,15 +184,6 @@ select {
 button:not(.min-h-11):not(.min-h-12):not(.size-11),
 a:not(.min-h-11):not(.min-h-12):not(.size-11) {
   min-height: 44px;
-}
-
-/* GSAP-optimized card hover */
-.demo-story-card,
-.demo-proof-card,
-.demo-program-card,
-.demo-source-card,
-article.rounded-lg.border.border-line {
-  will-change: transform, box-shadow, border-color;
 }
 
 .skip-link {
@@ -586,22 +567,6 @@ article.rounded-lg.border.border-line {
   font-size: 0.76rem;
   font-weight: 700;
   padding: 0.7rem 0.9rem;
-}
-
-/* ---- Inquiry wizard motion ---- */
-@keyframes wizardOverlayIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes wizardStepIn {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.wizard-overlay-in { animation: wizardOverlayIn 0.3s ease both; }
-.wizard-step-in { animation: wizardStepIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) both; }
-@media (prefers-reduced-motion: reduce) {
-  .wizard-overlay-in,
-  .wizard-step-in { animation: none !important; }
 }
 
 /* Inner-page hero ambience — gives about/programs/impact/contact the homepage's depth */

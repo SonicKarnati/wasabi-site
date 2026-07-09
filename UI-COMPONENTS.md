@@ -42,7 +42,7 @@ Installed and adapted 2026-07-08:
 - `faq-accordion`
   Used on `/contact` with review-safe FAQ content.
 - `kinetic-text-loader`
-  Used as motion text in the homepage final CTA.
+  Installed but not currently used on live pages.
 - `line-hover-link`
   Used for footer navigation links.
 - `perspective-grid`
@@ -71,6 +71,6 @@ document the install here.
 
 ## Motion dependencies in use
 
-- `framer-motion` — section-level entrances and interactive motion
+- `framer-motion` — interactive component motion
 - `animejs` — scoped to `components/sections/NetworkHero.tsx` (SVG network
   choreography); approved exception, see CLAUDE.md

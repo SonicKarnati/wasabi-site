@@ -32,6 +32,8 @@ interface TestimonialsCardProps {
     autoPlay?: boolean;
     /** Auto-play interval in ms (default: 3000) */
     autoPlayInterval?: number;
+    /** Initial active item index */
+    initialIndex?: number;
 }
 
 export function TestimonialsCard({
@@ -42,8 +44,9 @@ export function TestimonialsCard({
     showCounter = true,
     autoPlay = false,
     autoPlayInterval = 3000,
+    initialIndex = 0,
 }: TestimonialsCardProps) {
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(initialIndex);
     const [direction, setDirection] = useState(1);
 
     const activeItem = items[activeIndex];
@@ -84,7 +87,7 @@ export function TestimonialsCard({
     return (
         <div className={cn("flex items-center justify-center p-8", className)}>
             <div
-                className="relative grid w-full grid-cols-[1fr] gap-x-8 gap-y-5 md:grid-cols-[1fr_1fr] md:grid-rows-[auto_auto_auto]"
+                className="relative grid w-full grid-cols-[1fr] gap-x-8 gap-y-5 md:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.75fr)] md:grid-rows-[auto_auto_auto]"
                 style={{ perspective: "1400px", maxWidth: `${width}px` }}
             >
                 {/* Counter */}
@@ -95,7 +98,7 @@ export function TestimonialsCard({
                 )}
 
                 {/* Image Card Stack */}
-                <div className="relative col-start-1 row-start-2 aspect-square w-full md:row-start-1 md:row-span-3">
+                <div className="relative col-start-1 row-start-2 aspect-[16/10] w-full md:row-start-1 md:row-span-3">
                     <AnimatePresence custom={direction}>
                         {items.map((item, index) => {
                             const isActive = index === activeIndex;
@@ -151,8 +154,8 @@ export function TestimonialsCard({
                                         src={item.image}
                                         alt={item.title}
                                         fill
-                                        sizes="(min-width: 768px) 320px, 88vw"
-                                        className="w-full h-full object-cover"
+                                        sizes="(min-width: 1024px) 720px, 92vw"
+                                        className="h-full w-full object-contain"
                                         draggable={false}
                                     />
                                 </motion.div>

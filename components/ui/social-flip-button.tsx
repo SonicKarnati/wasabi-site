@@ -1,8 +1,7 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import type { ElementType, ReactNode } from "react";
-import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 export interface SocialItem {
@@ -24,18 +23,12 @@ interface SocialFlipButtonProps {
 function SocialFlipNode({
   item,
   index,
-  isHovered,
-  setTooltipIndex,
-  tooltipIndex,
   itemClassName,
   frontClassName,
   backClassName,
 }: {
   item: SocialItem;
   index: number;
-  isHovered: boolean;
-  setTooltipIndex: (val: number | null) => void;
-  tooltipIndex: number | null;
   itemClassName?: string;
   frontClassName?: string;
   backClassName?: string;
@@ -49,31 +42,19 @@ function SocialFlipNode({
     <Wrapper
       {...wrapperProps}
       aria-label={item.label}
-      className={cn("relative h-10 w-10 cursor-pointer", itemClassName)}
+      className={cn("group grid min-h-0 cursor-pointer justify-items-center gap-2", itemClassName)}
       style={{ perspective: "1000px" }}
-      onMouseEnter={() => setTooltipIndex(index)}
-      onMouseLeave={() => setTooltipIndex(null)}
     >
-      <AnimatePresence>
-        {isHovered && tooltipIndex === index && (
-          <motion.span
-            initial={{ opacity: 0, y: 8, scale: 0.94, x: "-50%" }}
-            animate={{ opacity: 1, y: -48, scale: 1, x: "-50%" }}
-            exit={{ opacity: 0, y: 8, scale: 0.94, x: "-50%" }}
-            transition={{ duration: 0.18, ease: "easeOut" }}
-            className="absolute left-1/2 z-50 whitespace-nowrap rounded-md bg-forest px-3 py-1.5 text-xs font-bold text-cream shadow-xl"
-          >
-            {item.label}
-            <span className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-forest" />
-          </motion.span>
-        )}
-      </AnimatePresence>
-
       <motion.span
-        className="relative block h-full w-full"
-        initial={false}
-        animate={{ rotateY: isHovered ? 180 : 0 }}
-        transition={{ duration: 0.7, type: "spring", stiffness: 120, damping: 15, delay: index * 0.06 }}
+        className="relative block size-11"
+        animate={{ rotateY: [0, 180, 180, 360] }}
+        transition={{
+          duration: 4.2,
+          ease: "easeInOut",
+          repeat: Infinity,
+          delay: index * 0.28,
+          times: [0, 0.38, 0.62, 1],
+        }}
         style={{ transformStyle: "preserve-3d" }}
       >
         <span
@@ -95,6 +76,9 @@ function SocialFlipNode({
           {item.icon}
         </span>
       </motion.span>
+      <span className="whitespace-nowrap text-[0.68rem] font-bold uppercase tracking-[0.08em] text-forest/75">
+        {item.label}
+      </span>
     </Wrapper>
   );
 }
@@ -106,19 +90,9 @@ export default function SocialFlipButton({
   frontClassName,
   backClassName,
 }: SocialFlipButtonProps) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [tooltipIndex, setTooltipIndex] = useState<number | null>(null);
-
   return (
     <div className={cn("flex items-center", className)}>
-      <div
-        className="group relative flex items-center justify-center gap-2 rounded-lg border border-line bg-white/60 p-3 shadow-sm"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => {
-          setIsHovered(false);
-          setTooltipIndex(null);
-        }}
-      >
+      <div className="relative flex flex-wrap items-center justify-center gap-4 rounded-lg border border-line bg-white/60 p-3 shadow-sm">
         <div className="pointer-events-none absolute -inset-px overflow-hidden rounded-lg">
           <motion.div
             className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-terracotta to-transparent"
@@ -137,9 +111,6 @@ export default function SocialFlipButton({
             key={`${item.label}-${index}`}
             item={item}
             index={index}
-            isHovered={isHovered}
-            setTooltipIndex={setTooltipIndex}
-            tooltipIndex={tooltipIndex}
             itemClassName={itemClassName}
             frontClassName={frontClassName}
             backClassName={backClassName}

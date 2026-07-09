@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import gsap from "gsap";
 
 type MobileNavProps = {
   items: Array<{ label: string; href: string }>;
@@ -14,25 +13,6 @@ export function MobileNav({ items }: MobileNavProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const panelId = "mobile-navigation";
-
-  useEffect(() => {
-    if (!panelRef.current) return;
-    if (isOpen) {
-      gsap.fromTo(
-        panelRef.current,
-        { opacity: 0, scale: 0.95, y: -8 },
-        { opacity: 1, scale: 1, y: 0, duration: 0.2, ease: "power2.out" }
-      );
-    } else {
-      gsap.to(panelRef.current, {
-        opacity: 0,
-        scale: 0.95,
-        y: -8,
-        duration: 0.15,
-        ease: "power2.in",
-      });
-    }
-  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -77,8 +57,9 @@ export function MobileNav({ items }: MobileNavProps) {
       <div
         ref={panelRef}
         id={panelId}
-        className={`absolute left-4 right-4 top-20 z-20 rounded-lg border border-line bg-cream p-4 shadow-lg ${isOpen ? '' : 'pointer-events-none'}`}
-        style={{ opacity: 0 }}
+        className={`absolute left-4 right-4 top-20 z-20 rounded-lg border border-line bg-cream p-4 shadow-lg transition-opacity duration-150 ${
+          isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
         inert={!isOpen ? true : undefined}
       >
         <nav aria-label="Mobile navigation" className="grid gap-2">

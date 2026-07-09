@@ -3,9 +3,9 @@ export const siteInfo = {
   description:
     "Wasabi AI helps people in Bharat become capable builders in the age of AI through practical, build-first programs.",
   officialContact: {
-    email: "connect@wasabiai.org",
+    email: "connect@thewasabiai.com",
     phone: "Available on request",
-    domain: "wasabiai.org",
+    domain: "thewasabiai.com",
     location: "India",
   },
   trustNote:

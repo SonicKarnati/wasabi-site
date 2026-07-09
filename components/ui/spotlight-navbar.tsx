@@ -114,7 +114,7 @@ export function SpotlightNavbar({
                 aria-label={ariaLabel}
                 ref={navRef}
                 className={cn(
-                    "relative h-11 overflow-hidden rounded-full border border-line bg-white/70 shadow-sm transition-all duration-300"
+                    "relative h-11 overflow-hidden rounded-full transition-all duration-300"
                 )}
             >
                 {/* Content */}

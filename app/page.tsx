@@ -9,15 +9,14 @@ import {
   School,
   ShieldCheck,
   Sparkles,
+  Trophy,
   UsersRound,
 } from "lucide-react";
-import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { InquiryWizard } from "@/components/sections/InquiryWizard";
 import { NetworkHero } from "@/components/sections/NetworkHero";
 import { AgentBentoGrid } from "@/components/ui/agent-bento-grid";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { FaqAccordion } from "@/components/ui/faq-accordion";
-import { KineticTextLoader } from "@/components/ui/kinetic-text-loader";
 import { PerspectiveGrid } from "@/components/ui/perspective-grid";
 import SocialFlipButton from "@/components/ui/social-flip-button";
 import { TestimonialsCard } from "@/components/ui/testimonials-card";
@@ -75,6 +74,98 @@ const sourceVisuals = [
   },
 ];
 
+const socialStats = [
+  { value: "2,000+", label: "Students became AI enabled" },
+  { value: "120+", label: "Schools represented" },
+  { value: "4.8/5", label: "Average satisfaction score from parents and students" },
+  { value: "20+", label: "National news outlets featuring student winners" },
+];
+
+const schools = [
+  "St. Mary's School",
+  "St. Xavier's School",
+  "Bluebells School International",
+  "Bal Bharati Public School",
+  "Ryan International School",
+  "Indus International School",
+  "GD Goenka Public School",
+  "Aditya Birla World Academy",
+  "Shiv Nadar School",
+  "Delhi Public School",
+  "Dhirubhai Ambani International School",
+  "La Martiniere College",
+  "Kendriya Vidyalaya",
+  "Army Public School",
+  "Sardar Patel Vidyalaya",
+  "Apeejay School",
+  "Bishop Cotton Boys' School",
+];
+
+const studentProjects = [
+  {
+    name: "Anvi Rajput",
+    meta: "10th Class · Winner Cohort 3",
+    project: "E-Commerce Clothing Brand for Young Girls",
+    description: "Ideated and built a full e-commerce clothing brand for young girls — from concept to live storefront.",
+  },
+  {
+    name: "Akshit Agarwal",
+    meta: "8th Class · Winner Cohort 3",
+    project: "AI-Powered Online Provision Store",
+    description: "Built an AI-powered platform to transform his father's provision store into a thriving online business.",
+  },
+  {
+    name: "Arjun",
+    meta: "9th Class · Winner Cohort 3",
+    project: "Online Library Discovery Platform",
+    description: "Built an online library platform that helps students discover upcoming books and track their reading journey.",
+  },
+  {
+    name: "Aaradhya Jain",
+    meta: "10th Class · Winner Cohort 2",
+    project: "AI Emotion Detection Tool",
+    description: "Built an AI-powered emotion detection tool that helps people understand and navigate their emotions.",
+  },
+  {
+    name: "Sanchi Singhal",
+    meta: "9th Class · Winner Cohort 2",
+    project: "YOU-niverse — Interactive Digital Portfolio",
+    description: "Built YOU-niverse, a sci-fi-themed interactive digital portfolio where personal traits appear as explorable planets.",
+  },
+  {
+    name: "Parisha Chauhan",
+    meta: "10th Class · Winner Cohort 2",
+    project: "Smart Travel Checklist Platform",
+    description: "Built a smart travel checklist platform that helps travelers organize and remember essential items before a trip.",
+  },
+  {
+    name: "Aliya Gupta",
+    meta: "10th Class · Winner Cohort 1",
+    project: "Local Bakery — Taken Online",
+    description: "Built a website to take a local bakery's business fully online. First client, first launch.",
+  },
+  {
+    name: "Anvi Bindal",
+    meta: "10th Class · Winner Cohort 1",
+    project: "Full Brand — Song, Marketing & Website",
+    description: "Created marketing materials, a promotional song, and a complete website for a local business.",
+  },
+  {
+    name: "Keshav Kansal",
+    meta: "11th Class · Winner Cohort 1",
+    project: "Startup Platform + Investor Pitch Deck",
+    description: "Built an online platform and a full investor pitch deck for his startup idea — at age 16.",
+  },
+];
+
+function initials(name: string) {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2);
+}
+
 export default function HomePage() {
   return (
     <>
@@ -120,7 +211,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
             <div className="demo-sticky-copy">
@@ -147,9 +238,78 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </ScrollReveal>
+      </section>
 
-      <ScrollReveal as="section" className="demo-dark-band overflow-hidden bg-forest py-16 text-cream md:py-24" y={24}>
+      <section className="social-proof-section overflow-hidden py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-wasabi">
+                Social proof · Real students · Real results
+              </p>
+              <h2 className="mt-4 font-display text-5xl font-semibold leading-tight text-forest md:text-7xl">
+                Not a promise. A track record.
+              </h2>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {socialStats.map((stat) => (
+                <article key={stat.label} className="rounded-lg border border-line bg-white/58 p-6 shadow-sm">
+                  <p className="font-display text-5xl font-bold leading-none text-wasabi">{stat.value}</p>
+                  <p className="mt-3 text-sm font-bold uppercase tracking-[0.08em] text-forest/75">{stat.label}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 rounded-lg border border-line bg-white/50 p-6 shadow-sm">
+            <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-wasabi">Schools represented</p>
+                <h3 className="mt-3 font-display text-3xl font-semibold text-forest">Across leading Indian schools.</h3>
+              </div>
+              <p className="text-sm font-bold text-forest/70">+ 99 more schools</p>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {schools.map((school) => (
+                <span key={school} className="rounded-full border border-line bg-cream/70 px-3 py-1.5 text-sm font-bold text-forest/80">
+                  {school}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12">
+            <div className="max-w-3xl">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-wasabi">Wasabi Challenge</p>
+              <h3 className="mt-3 font-display text-4xl font-semibold leading-tight text-forest md:text-5xl">
+                Student projects that won the Wasabi Challenge.
+              </h3>
+            </div>
+            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {studentProjects.map((student) => (
+                <article key={`${student.name}-${student.project}`} className="rounded-lg border border-line bg-white/58 p-6 shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <span className="grid size-12 place-items-center rounded-full bg-forest text-sm font-black text-cream">
+                      {initials(student.name)}
+                    </span>
+                    <div>
+                      <h4 className="font-display text-2xl font-semibold leading-tight text-forest">{student.name}</h4>
+                      <p className="text-xs font-bold uppercase tracking-[0.08em] text-wasabi">{student.meta}</p>
+                    </div>
+                  </div>
+                  <p className="mt-5 flex items-start gap-2 font-bold leading-6 text-forest">
+                    <Trophy aria-hidden="true" className="mt-0.5 shrink-0 text-terracotta" size={18} />
+                    {student.project}
+                  </p>
+                  <p className="mt-3 leading-7 text-ink/78">&ldquo;{student.description}&rdquo;</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="demo-dark-band overflow-hidden bg-forest py-16 text-cream md:py-24">
         <div className="demo-band-glow" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 flex flex-col justify-between gap-8 md:flex-row md:items-end">
@@ -165,9 +325,9 @@ export default function HomePage() {
           </div>
           <AgentBentoGrid />
         </div>
-      </ScrollReveal>
+      </section>
 
-      <ScrollReveal as="section" className="demo-dark-band overflow-hidden bg-forest py-16 text-cream md:py-24" y={24}>
+      <section className="demo-dark-band overflow-hidden bg-forest py-16 text-cream md:py-24">
         <div className="demo-band-glow" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
@@ -209,24 +369,26 @@ export default function HomePage() {
             })}
           </div>
         </div>
-      </ScrollReveal>
+      </section>
 
-      <ScrollReveal as="section" className="overflow-hidden py-16 md:py-24" y={24}>
+      <section className="overflow-hidden py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-wasabi">Source visual rail</p>
-            <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-forest md:text-6xl">
-              Source materials create texture, not final proof.
-            </h2>
-            <p className="mt-5 leading-7 text-ink/80">
-              These source visuals give the programs real texture. They remain provisional until image rights, partner marks, and claim status are reviewed.
-            </p>
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div className="max-w-3xl">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-wasabi">Source visual rail</p>
+              <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-forest md:text-6xl">
+                Source materials create texture, not final proof.
+              </h2>
+              <p className="mt-5 leading-7 text-ink/80">
+                These source visuals give the programs real texture. They remain provisional until image rights, partner marks, and claim status are reviewed.
+              </p>
+            </div>
+            <TestimonialsCard items={sourceVisuals} width={1200} initialIndex={1} className="justify-start p-0" />
           </div>
-          <TestimonialsCard items={sourceVisuals} width={860} className="mt-12 justify-start p-0" />
         </div>
-      </ScrollReveal>
+      </section>
 
-      <ScrollReveal as="section" className="py-16 md:py-24" y={24}>
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <div>
@@ -269,20 +431,12 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </ScrollReveal>
+      </section>
 
-      <ScrollReveal
-        as="section"
-        className="demo-final-cta overflow-hidden bg-forest px-4 py-20 text-white sm:px-6 md:py-28 lg:px-8"
-        y={24}
-        delay={0.1}
-      >
+      <section className="demo-final-cta overflow-hidden bg-forest px-4 py-20 text-white sm:px-6 md:py-28 lg:px-8">
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <Sparkles aria-hidden="true" className="mx-auto text-cream" size={34} />
-          <div className="mt-6">
-            <KineticTextLoader text="Building" />
-          </div>
-          <h2 className="mt-4 font-display text-5xl font-semibold leading-tight md:text-7xl">
+          <h2 className="mt-6 font-display text-5xl font-semibold leading-tight md:text-7xl">
             Make AI feel like something people can build with.
           </h2>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
@@ -290,9 +444,9 @@ export default function HomePage() {
             <CTAButton label="See program structure" href="/programs" variant="secondary" className="border-cream text-cream hover:bg-white/10" />
           </div>
         </div>
-      </ScrollReveal>
+      </section>
 
-      <ScrollReveal as="section" id="contact" className="scroll-mt-24 py-16 md:py-24" y={24}>
+      <section id="contact" className="scroll-mt-24 py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div className="max-w-3xl">
@@ -329,8 +483,11 @@ export default function HomePage() {
           <div className="mt-16 max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-wasabi">Quick answers</p>
             <h3 className="mt-4 font-display text-3xl font-semibold leading-tight text-forest md:text-4xl">
-              Review-safe answers
+              We have answered every question we have ever been asked.
             </h3>
+            <p className="mt-4 leading-7 text-ink/75">
+              If yours is not here, reach us directly — we will reply within the hour.
+            </p>
             <div className="mt-8">
               <FaqAccordion
                 title=""
@@ -349,7 +506,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </ScrollReveal>
+      </section>
     </>
   );
 }

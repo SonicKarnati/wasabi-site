@@ -1,9 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
-import { gsap } from "gsap";
 import { inquiryTypes } from "@/content/contact";
-import { prefersReducedMotion, useShakeAnimation } from "@/lib/animations";
 
 type ContactMethod = "email" | "phone";
 
@@ -44,63 +42,6 @@ export function InquiryWizard() {
   const titleId = useId();
   const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement | null>(null);
   const beginRef = useRef<HTMLButtonElement | null>(null);
-  const errorRef = useRef<HTMLParagraphElement | null>(null);
-  const stepContentRef = useRef<HTMLDivElement | null>(null);
-  const overlayRef = useRef<HTMLDivElement | null>(null);
-  const inlineRef = useRef<HTMLDivElement | null>(null);
-
-  // Animate inline entry on mount
-  useEffect(() => {
-    if (inlineRef.current && !prefersReducedMotion()) {
-      gsap.from(inlineRef.current, {
-        opacity: 0,
-        y: 40,
-        duration: 0.7,
-        ease: "power2.out",
-      });
-    }
-  }, []);
-
-  // Animate overlay entrance with GSAP
-  useEffect(() => {
-    if (!active || !overlayRef.current || prefersReducedMotion()) return;
-    gsap.fromTo(
-      overlayRef.current,
-      { opacity: 0, scale: 0.96 },
-      { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" },
-    );
-  }, [active]);
-
-  // Animate step content on step change
-  useEffect(() => {
-    if (!active || submitted || !stepContentRef.current || prefersReducedMotion()) return;
-    const children = stepContentRef.current.children;
-    gsap.set(children, { opacity: 0, y: 20 });
-    gsap.to(children, {
-      opacity: 1,
-      y: 0,
-      duration: 0.45,
-      ease: "power2.out",
-      stagger: 0.07,
-    });
-  }, [active, stepIndex, submitted]);
-
-  // Animate success state
-  useEffect(() => {
-    if (!submitted || !stepContentRef.current || prefersReducedMotion()) return;
-    const children = stepContentRef.current.children;
-    gsap.set(children, { opacity: 0, y: 24, scale: 0.96 });
-    gsap.to(children, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 0.5,
-      ease: "power2.out",
-      stagger: 0.08,
-    });
-  }, [submitted]);
-
-  useShakeAnimation(errorRef as React.RefObject<HTMLElement>, !!error);
 
   const stepId = STEP_ORDER[stepIndex];
   const total = STEP_ORDER.length;
@@ -118,21 +59,8 @@ export function InquiryWizard() {
   }, []);
 
   const close = useCallback(() => {
-    if (overlayRef.current) {
-      gsap.to(overlayRef.current, {
-        opacity: 0,
-        scale: 0.96,
-        duration: 0.2,
-        ease: "power2.in",
-        onComplete: () => {
-          setActive(false);
-          window.requestAnimationFrame(() => beginRef.current?.focus());
-        },
-      });
-    } else {
-      setActive(false);
-      window.requestAnimationFrame(() => beginRef.current?.focus());
-    }
+    setActive(false);
+    window.requestAnimationFrame(() => beginRef.current?.focus());
   }, []);
 
   const validateStep = useCallback(
@@ -169,18 +97,7 @@ export function InquiryWizard() {
       return;
     }
     if (stepIndex < total - 1) {
-      const currentContent = stepContentRef.current;
-      if (currentContent && !prefersReducedMotion()) {
-        gsap.to(currentContent.children, {
-          opacity: 0,
-          y: -12,
-          duration: 0.15,
-          ease: "power1.in",
-          onComplete: () => setStepIndex((i) => i + 1),
-        });
-      } else {
-        setStepIndex((i) => i + 1);
-      }
+      setStepIndex((i) => i + 1);
     } else {
       setSubmitted(true);
     }
@@ -189,18 +106,7 @@ export function InquiryWizard() {
   const goBack = useCallback(() => {
     setError(null);
     if (stepIndex > 0) {
-      const currentContent = stepContentRef.current;
-      if (currentContent && !prefersReducedMotion()) {
-        gsap.to(currentContent.children, {
-          opacity: 0,
-          y: 12,
-          duration: 0.15,
-          ease: "power1.in",
-          onComplete: () => setStepIndex((i) => i - 1),
-        });
-      } else {
-        setStepIndex((i) => i - 1);
-      }
+      setStepIndex((i) => i - 1);
     }
   }, [stepIndex]);
 
@@ -243,7 +149,7 @@ export function InquiryWizard() {
 
   return (
     <>
-      <div ref={inlineRef}>
+      <div>
         <div className="rounded-2xl border border-line bg-white/55 p-8 shadow-sm md:p-10">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-wasabi">Start a conversation</p>
           <h3 className="mt-3 font-display text-4xl font-semibold text-forest md:text-5xl">
@@ -276,7 +182,6 @@ export function InquiryWizard() {
 
       {active && (
         <div
-          ref={overlayRef}
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
@@ -315,7 +220,7 @@ export function InquiryWizard() {
 
           <div className="relative z-10 mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center px-6 py-10">
             {submitted ? (
-              <div key="success" ref={stepContentRef} className="text-center">
+              <div key="success" className="text-center">
                 <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-terracotta/20 text-terracotta">
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden>
                     <path d="M20 6 9 17l-5-5" />
@@ -349,7 +254,7 @@ export function InquiryWizard() {
                 </div>
               </div>
             ) : (
-              <div key={stepId} ref={stepContentRef}>
+              <div key={stepId}>
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">{prompt.eyebrow}</p>
                 <h2 id={titleId} className="mt-3 font-display text-4xl font-semibold leading-tight md:text-5xl">
                   {prompt.title}
@@ -451,7 +356,7 @@ export function InquiryWizard() {
                   )}
                 </div>
 
-                {error && <p ref={errorRef} className="mt-3 text-sm font-semibold text-terracotta">{error}</p>}
+                {error && <p className="mt-3 text-sm font-semibold text-terracotta">{error}</p>}
 
                 <div className="mt-8 flex items-center gap-4">
                   {stepIndex > 0 && (

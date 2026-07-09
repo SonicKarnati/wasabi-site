@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { ImageTextSection } from "@/components/sections/ImageTextSection";
 import { QuoteBlock } from "@/components/ui/QuoteBlock";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Skiper19 } from "@/components/ui/skiper-ui/skiper19";
 import { aboutPage } from "@/content/pages";
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function AboutPage() {
           note: "Illustrative visual — not program photography",
         }}
       />
+      <Skiper19 />
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="Principles" title="How the brand should show up" />

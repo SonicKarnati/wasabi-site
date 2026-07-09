@@ -22,18 +22,37 @@ dependency in `package.json`.
 
 ## Current state (2026-07-08)
 
-`components/ui/` contains only the site's own hand-rolled components
+`components/ui/` contains the site's hand-rolled primitives
 (CTAButton, SectionHeader, VerificationBadge, ProgramCard, ImpactCard,
-FAQAccordion, QuoteBlock, StatBlock, StoryCard). No registry components are
-currently installed.
+FAQAccordion, QuoteBlock, StatBlock, StoryCard) plus adapted registry
+components that are now used on live pages.
 
-A previous batch of 10 pre-installed registry components (agent-bento-grid,
-testimonials-card, spotlight-navbar, faq-accordion, kinetic-text-loader,
-line-hover-link, perspective-grid, social-flip-button, skiper19, skiper30)
-was removed 2026-07-08: none were imported anywhere, and none fit the
-content strategy — the site publishes no testimonials or partner logos
-(trust rules in `planning/site-strategy.md`), has no loading states, no
-social links, and already has a settled burger-nav pattern.
+Installed and adapted 2026-07-08:
+
+- `@skiper-ui/skiper19` -> `components/ui/skiper-ui/skiper19.tsx`
+  Used on `/about` as a Wasabi capability-path scroll drawing section.
+- `@skiper-ui/skiper30` -> `components/ui/skiper-ui/skiper30.tsx`
+  Used on `/programs` as a source-material parallax rail.
+- `agent-bento-grid`
+  Reworked as a Wasabi capability-system grid on the homepage.
+- `testimonials-card`
+  Reused as a source-visual carousel, not as testimonials.
+- `spotlight-navbar`
+  Used in the desktop header via `components/layout/SiteSpotlightNav.tsx`.
+- `faq-accordion`
+  Used on `/contact` with review-safe FAQ content.
+- `kinetic-text-loader`
+  Used as motion text in the homepage final CTA.
+- `line-hover-link`
+  Used for footer navigation links.
+- `perspective-grid`
+  Used as a subtle homepage hero background layer.
+- `social-flip-button`
+  Used on `/contact` for official contact/inquiry paths.
+
+The registry files were intentionally restyled to match the Wasabi palette
+and content rules. Do not overwrite them with a fresh registry install unless
+you are prepared to reapply the local adaptations.
 
 ## Policy: when a registry component earns a place
 

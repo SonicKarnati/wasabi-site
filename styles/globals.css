@@ -277,8 +277,7 @@ textarea {
   top: 7rem;
 }
 
-.demo-story-card,
-.demo-proof-card {
+.demo-story-card {
   background: rgb(255 255 255 / 0.48);
   border: 1px solid rgb(45 106 79 / 0.22);
   border-radius: 8px;
@@ -286,8 +285,7 @@ textarea {
   padding: 1.5rem;
 }
 
-.demo-story-card,
-.demo-proof-card {
+.demo-story-card {
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
@@ -296,7 +294,6 @@ textarea {
 }
 
 .demo-story-card:hover,
-.demo-proof-card:hover,
 .demo-program-card:hover,
 .demo-source-card:hover {
   border-color: rgb(45 106 79 / 0.58);
@@ -482,27 +479,6 @@ textarea {
 
 .demo-source-action svg {
   transition: transform 180ms ease;
-}
-
-.demo-proof-top {
-  align-items: center;
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  margin-bottom: 1.15rem;
-}
-
-.demo-proof-icon {
-  align-items: center;
-  background: rgb(45 106 79 / 0.1);
-  border: 1px solid rgb(45 106 79 / 0.22);
-  border-radius: 999px;
-  color: #2d6a4f;
-  display: inline-flex;
-  flex: 0 0 auto;
-  height: 2.85rem;
-  justify-content: center;
-  width: 2.85rem;
 }
 
 .demo-final-cta {

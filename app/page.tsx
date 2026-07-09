@@ -1,9 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
 import {
-  ArrowRight,
   Building2,
-  FileCheck2,
   Rocket,
   School,
   ShieldCheck,
@@ -12,8 +8,11 @@ import {
 } from "lucide-react";
 import { NetworkHero } from "@/components/sections/NetworkHero";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { AgentBentoGrid } from "@/components/ui/agent-bento-grid";
+import { KineticTextLoader } from "@/components/ui/kinetic-text-loader";
+import { PerspectiveGrid } from "@/components/ui/perspective-grid";
+import { TestimonialsCard } from "@/components/ui/testimonials-card";
 import { VerificationBadge } from "@/components/ui/VerificationBadge";
-import { plannedScale, proofStats } from "@/content/impact";
 import { homePage } from "@/content/pages";
 import { programs } from "@/content/programs";
 
@@ -39,32 +38,32 @@ const programIcons = [School, Building2, UsersRound, ShieldCheck, Rocket, Sparkl
 
 const sourceVisuals = [
   {
+    id: "ai-learner",
     src: "/assets/extracted/wasabi-ai-learner-cover.png",
-    alt: "AI Learner brochure cover",
+    image: "/assets/extracted/wasabi-ai-learner-cover.png",
     title: "AI Learner",
-    note: "Prototype visual, not final approved photography.",
-    href: "/programs",
+    description: "Prototype visual, not final approved photography.",
   },
   {
+    id: "builder-events",
     src: "/assets/extracted/wasabi-startup-event-cover.png",
-    alt: "Startup with AI event brochure cover",
+    image: "/assets/extracted/wasabi-startup-event-cover.png",
     title: "Builder events",
-    note: "Contains partner-style marks; needs review before final use.",
-    href: "/programs",
+    description: "Contains partner-style marks; needs review before final use.",
   },
   {
+    id: "bharat-builds",
     src: "/assets/extracted/wasabi-bharat-builds-cover.png",
-    alt: "Bharat Builds campaign cover",
+    image: "/assets/extracted/wasabi-bharat-builds-cover.png",
     title: "Hackathon movement",
-    note: "Strong visual; partner/reference permission risk.",
-    href: "/programs",
+    description: "Strong visual; partner/reference permission risk.",
   },
   {
+    id: "shg-ecosystem",
     src: "/assets/extracted/wasabi-shg-empowerment-cover.png",
-    alt: "SHG empowerment source page",
+    image: "/assets/extracted/wasabi-shg-empowerment-cover.png",
     title: "SHG ecosystem",
-    note: "Grounded source texture; text-heavy.",
-    href: "/programs",
+    description: "Grounded source texture; text-heavy.",
   },
 ];
 
@@ -72,6 +71,12 @@ export default function HomePage() {
   return (
     <>
       <section className="demo-hero overflow-hidden">
+        <PerspectiveGrid
+          aria-hidden="true"
+          gridSize={18}
+          fadeRadius={72}
+          className="pointer-events-none absolute inset-0 bg-cream/30 opacity-35"
+        />
         <div className="demo-glow demo-glow-one" aria-hidden="true" />
         <div className="demo-glow demo-glow-two" aria-hidden="true" />
         <div className="mx-auto grid min-h-[calc(100svh-73px)] max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
@@ -135,6 +140,24 @@ export default function HomePage() {
       <section className="demo-dark-band overflow-hidden bg-forest py-16 text-cream md:py-24">
         <div className="demo-band-glow" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-cream/75">Capability system</p>
+              <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight text-white md:text-6xl">
+                The operating model is visible before the promise.
+              </h2>
+            </div>
+            <p className="max-w-md leading-7 text-cream/80">
+              The grid keeps the site expressive without turning projected work into proof.
+            </p>
+          </div>
+          <AgentBentoGrid />
+        </div>
+      </section>
+
+      <section className="demo-dark-band overflow-hidden bg-forest py-16 text-cream md:py-24">
+        <div className="demo-band-glow" aria-hidden="true" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-cream/75">What Wasabi does</p>
@@ -181,73 +204,23 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="demo-image-rail mt-12">
-            {sourceVisuals.map((visual) => (
-              <Link key={visual.src} href={visual.href} className="demo-source-card" aria-label={`View related programs for ${visual.title}`}>
-                <figure>
-                  <Image src={visual.src} alt={visual.alt} width={420} height={560} />
-                  <figcaption>
-                    <strong>{visual.title}</strong>
-                    <span>{visual.note}</span>
-                    <span className="demo-source-action">
-                      View related program <ArrowRight aria-hidden="true" size={15} />
-                    </span>
-                  </figcaption>
-                </figure>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-wasabi">Credibility</p>
-              <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-forest md:text-6xl">
-                Proof can move. It still cannot pretend.
-              </h2>
-              <p className="mt-5 leading-7 text-ink/80">
-                No count-up animation on placeholders. Proof status stays visible instead of manufacturing certainty.
-              </p>
-            </div>
-            <div className="grid gap-5 sm:grid-cols-2">
-              {proofStats.map((stat) => (
-                <article key={stat.label} className="demo-proof-card">
-                  <div className="demo-proof-top">
-                    <span className="demo-proof-icon">
-                      <FileCheck2 aria-hidden="true" size={21} />
-                    </span>
-                    <VerificationBadge status={stat.status} />
-                  </div>
-                  <p className="mt-5 font-display text-3xl font-bold leading-tight text-wasabi">{stat.value}</p>
-                  <p className="mt-2 text-sm font-bold uppercase tracking-[0.08em] text-forest/70">{stat.label}</p>
-                  <p className="mt-3 text-sm leading-6 text-muted">{stat.note}</p>
-                </article>
-              ))}
-              {plannedScale.map((item) => (
-                <article key={item.title} className="demo-proof-card sm:col-span-2">
-                  <div className="demo-proof-top">
-                    <span className="demo-proof-icon">
-                      <ShieldCheck aria-hidden="true" size={21} />
-                    </span>
-                    <VerificationBadge status={item.status} />
-                  </div>
-                  <h3 className="mt-7 font-display text-3xl font-semibold text-forest">{item.title}</h3>
-                  {item.metric ? <p className="mt-4 text-lg font-bold leading-7 text-wasabi">{item.metric}</p> : null}
-                  <p className="mt-4 leading-7 text-ink/80">{item.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
+          <TestimonialsCard
+            items={sourceVisuals}
+            width={860}
+            className="mt-12 justify-start p-0"
+            showCounter
+            showNavigation
+          />
         </div>
       </section>
 
       <section className="demo-final-cta overflow-hidden bg-forest px-4 py-20 text-white sm:px-6 md:py-28 lg:px-8">
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <Sparkles aria-hidden="true" className="mx-auto text-cream" size={34} />
-          <h2 className="mt-6 font-display text-5xl font-semibold leading-tight md:text-7xl">
+          <div className="mt-6">
+            <KineticTextLoader text="Building" />
+          </div>
+          <h2 className="mt-4 font-display text-5xl font-semibold leading-tight md:text-7xl">
             Make AI feel like something people can build with.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-cream/80">

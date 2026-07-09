@@ -13,7 +13,7 @@ export function CTAButton({ label, href, variant = "primary", className, onClick
       href={href}
       onClick={onClick}
       className={cn(
-        "inline-flex min-h-11 items-center justify-center rounded-md border px-5 py-2 text-sm font-bold transition focus-visible:outline-terracotta",
+        "inline-flex min-h-11 items-center justify-center rounded-md border px-5 py-2 text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta",
         variant === "primary" &&
           "shine-button border-wasabi bg-wasabi !text-white shadow-sm hover:-translate-y-0.5 hover:border-forest hover:bg-[#245a42] hover:!text-white hover:shadow-md",
         variant === "secondary" &&

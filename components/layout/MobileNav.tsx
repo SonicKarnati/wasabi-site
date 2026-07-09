@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import gsap from "gsap";
 
 type MobileNavProps = {
   items: Array<{ label: string; href: string }>;
@@ -11,7 +12,27 @@ type MobileNavProps = {
 export function MobileNav({ items }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const panelId = "mobile-navigation";
+
+  useEffect(() => {
+    if (!panelRef.current) return;
+    if (isOpen) {
+      gsap.fromTo(
+        panelRef.current,
+        { opacity: 0, scale: 0.95, y: -8 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.2, ease: "power2.out" }
+      );
+    } else {
+      gsap.to(panelRef.current, {
+        opacity: 0,
+        scale: 0.95,
+        y: -8,
+        duration: 0.15,
+        ease: "power2.in",
+      });
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -53,22 +74,26 @@ export function MobileNav({ items }: MobileNavProps) {
           />
         </span>
       </button>
-      {isOpen ? (
-        <div id={panelId} className="absolute left-4 right-4 top-20 z-20 rounded-lg border border-line bg-cream p-4 shadow-lg">
-          <nav aria-label="Mobile navigation" className="grid gap-2">
-            {items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="rounded-md px-3 py-3 text-sm font-bold text-forest transition-colors hover:bg-white"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      ) : null}
+      <div
+        ref={panelRef}
+        id={panelId}
+        className={`absolute left-4 right-4 top-20 z-20 rounded-lg border border-line bg-cream p-4 shadow-lg ${isOpen ? '' : 'pointer-events-none'}`}
+        style={{ opacity: 0 }}
+        inert={!isOpen ? true : undefined}
+      >
+        <nav aria-label="Mobile navigation" className="grid gap-2">
+          {items.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+              className="rounded-md px-3 py-3 text-sm font-bold text-forest transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </div>
   );
 }

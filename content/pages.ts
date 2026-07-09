@@ -7,7 +7,7 @@ export const homePage = {
     title: "Building Human Capability In The Age Of AI",
     description:
       "Wasabi helps people in Bharat become capable builders by creating real things with AI.",
-    primaryCta: { label: "Partner with Wasabi", href: "/contact", variant: "primary" as const },
+    primaryCta: { label: "Partner with Wasabi", href: "/#contact", variant: "primary" as const },
     secondaryCta: { label: "Explore programs", href: "/programs", variant: "secondary" as const },
   },
   stats: proofStats,
@@ -21,7 +21,7 @@ export const aboutPage = {
     description:
       "Wasabi exists to help people realize how capable they truly are in the age of AI.",
     primaryCta: { label: "See the work", href: "/programs#program-categories", variant: "primary" as const },
-    secondaryCta: { label: "Contact", href: "/contact", variant: "secondary" as const },
+    secondaryCta: { label: "Contact", href: "/#contact", variant: "secondary" as const },
   },
   principles: [
     {

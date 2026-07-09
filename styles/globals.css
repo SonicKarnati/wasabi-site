@@ -161,6 +161,48 @@ textarea {
 :focus-visible {
   outline: 3px solid #e5784a;
   outline-offset: 3px;
+  transition: outline-offset 120ms ease, outline-color 120ms ease;
+}
+
+/* Scroll-triggered header background transition */
+header {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-scrolled {
+  background-color: #fff4e3 !important;
+  box-shadow: 0 1px 4px rgb(17 36 31 / 0.08);
+}
+
+/* Enhanced card focus and touch targets */
+article:focus-visible,
+details:focus-visible {
+  outline: 3px solid #e5784a;
+  outline-offset: 3px;
+}
+
+/* Ensure interactive elements meet 44px touch target */
+button,
+a,
+summary,
+input,
+textarea,
+select {
+  min-height: 44px;
+}
+
+button:not(.min-h-11):not(.min-h-12):not(.size-11),
+a:not(.min-h-11):not(.min-h-12):not(.size-11) {
+  min-height: 44px;
+}
+
+/* GSAP-optimized card hover */
+.demo-story-card,
+.demo-proof-card,
+.demo-program-card,
+.demo-source-card,
+article.rounded-lg.border.border-line {
+  will-change: transform, box-shadow, border-color;
 }
 
 .skip-link {

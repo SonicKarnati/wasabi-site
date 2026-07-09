@@ -24,6 +24,14 @@ accomplish.
   `cleanup-and-relaunch-plan.md` and `visual-excellence-strategy.md`. Read this
   before making product decisions; this file won't repeat it.
 
+## UI Components
+
+`components/ui/` holds the site's own small components (CTAButton,
+SectionHeader, VerificationBadge, cards). Two external shadcn registries are
+wired in `components.json` for pulling components on demand — see
+[UI-COMPONENTS.md](UI-COMPONENTS.md) for registry access and the policy on
+when a registry component earns a place in this repo.
+
 ## MCP servers
 
 Hosted OAuth MCP server — no API keys stored in-repo. The canonical, tracked
@@ -44,6 +52,10 @@ motion), **not** Remotion. See
 A prior Remotion + Higgsfield prototype ("design-x") was removed 2026-07 because
 Remotion is an offline video-render / motion-graphics tool, not a live
 interactive DOM/WebGL layer.
+
+Approved exception (2026-07-08): `animejs` powers the homepage network-hero
+SVG choreography (`components/sections/NetworkHero.tsx`). It is scoped to that
+component — not a general license to add animation libraries elsewhere.
 
 ## Assets
 

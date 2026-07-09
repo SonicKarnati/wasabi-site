@@ -10,29 +10,12 @@ import {
   Sparkles,
   UsersRound,
 } from "lucide-react";
+import { NetworkHero } from "@/components/sections/NetworkHero";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { VerificationBadge } from "@/components/ui/VerificationBadge";
-import { plannedScale, proofStats, storyPlaceholders } from "@/content/impact";
+import { plannedScale, proofStats } from "@/content/impact";
 import { homePage } from "@/content/pages";
 import { programs } from "@/content/programs";
-
-const heroVisuals = [
-  {
-    src: "/assets/extracted/wasabi-ai-learner-cover.png",
-    alt: "AI Learner source brochure cover",
-    label: "Student builder source visual",
-  },
-  {
-    src: "/assets/extracted/wasabi-bharat-builds-cover.png",
-    alt: "Bharat Builds source campaign cover",
-    label: "Builder campaign source visual",
-  },
-  {
-    src: "/assets/extracted/wasabi-shg-empowerment-cover.png",
-    alt: "SHG empowerment source concept page",
-    label: "Community enterprise source visual",
-  },
-];
 
 const storyBeats = [
   {
@@ -48,7 +31,7 @@ const storyBeats = [
   {
     kicker: "Proof",
     title: "Credibility improves when proof labels stay visible.",
-    body: "This prototype keeps projected, placeholder, and needs-verification states explicit instead of dressing them up as final claims.",
+    body: "Wasabi keeps projected, placeholder, and needs-verification states explicit instead of dressing them up as final claims.",
   },
 ];
 
@@ -118,13 +101,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="demo-visual-stack" aria-label="Experimental source visual collage">
-            {heroVisuals.map((visual, index) => (
-              <figure key={visual.src} className={`demo-float-card demo-float-${index + 1}`}>
-                <Image src={visual.src} alt={visual.alt} width={480} height={680} priority={index === 0} />
-                <figcaption>{visual.label}</figcaption>
-              </figure>
-            ))}
+          <div className="relative z-10 lg:pl-4">
+            <NetworkHero />
           </div>
         </div>
       </section>
@@ -165,7 +143,7 @@ export default function HomePage() {
               </h2>
             </div>
             <p className="max-w-md leading-7 text-cream/80">
-              Every card keeps its source and verification status visible. The motion is dramatic; the claims stay conservative.
+              Every card keeps its source and verification status visible — expressive presentation, conservative claims.
             </p>
           </div>
 
@@ -199,7 +177,7 @@ export default function HomePage() {
               Source materials create texture, not final proof.
             </h2>
             <p className="mt-5 leading-7 text-ink/80">
-              These extracted PDF visuals help the demo feel more complete. They remain temporary until image rights, partner marks, and claim status are reviewed.
+              These source visuals give the programs real texture. They remain provisional until image rights, partner marks, and claim status are reviewed.
             </p>
           </div>
 
@@ -231,7 +209,7 @@ export default function HomePage() {
                 Proof can move. It still cannot pretend.
               </h2>
               <p className="mt-5 leading-7 text-ink/80">
-                No count-up animation is used for placeholders. The demo highlights proof status instead of manufacturing certainty.
+                No count-up animation on placeholders. Proof status stays visible instead of manufacturing certainty.
               </p>
             </div>
             <div className="grid gap-5 sm:grid-cols-2">

@@ -30,6 +30,12 @@ export default function AboutPage() {
         eyebrow="Bharat context"
         title="A future built from real Bharat"
         description="Villages, tier-2 cities, classrooms, SHG ecosystems, and young builders are not waiting for a distant AI future. They need confidence, exposure, and practical tools now."
+        image={{
+          src: "/assets/generated/bharat-classroom-learner.png",
+          alt: "A student working on a laptop at a wooden desk in a sunlit classroom",
+          caption: "Real Bharat, mid-build.",
+          note: "Illustrative visual — not program photography",
+        }}
       />
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
